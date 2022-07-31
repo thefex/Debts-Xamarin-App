@@ -26,10 +26,14 @@ For proper running of app you have to include:
 
 The app will build&run (tested on Android API 30, iOS 15.0) regardless of above, but not all features will work as expected/correctly - deep links/share/go premium will be broken.
 
-# App Video / iOS
+# App Video Showcase / iOS, Android
 
 See here: 
 https://github.com/thefex/Debts-Xamarin-App/blob/main/Content/ios_showcase_video.mov
+
+https://github.com/thefex/Debts-Xamarin-App/blob/main/Content/android_showcase_1.mov
+https://github.com/thefex/Debts-Xamarin-App/blob/main/Content/android_showcase_2.mov
+https://github.com/thefex/Debts-Xamarin-App/blob/main/Content/android_showcase_3__.mov
 
 
 # App Store screenshots
