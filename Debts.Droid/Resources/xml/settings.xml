@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto" local:iconSpaceReserved="false">
+    
+    <PreferenceCategory android:key="General" android:title="General" local:iconSpaceReserved="false">
+        <com.debts.FixedListPreference
+            android:defaultValue="USD"
+            android:dialogTitle="Select default currency"
+            android:key="DefaultCurrency"
+            android:title="Currency"
+            android:summary="Select default currency for new operations."
+            local:iconSpaceReserved="false"/>
+        <EditTextPreference android:title="Display Name"
+            android:key="DisplayNamePreference"
+            android:summary="Customize display name which will show when you share finance operation."/>
+        <Preference android:title="Rate app"
+            android:key="RateAppButton"
+            android:summary="Rate us and share your feedback so we can build better product!"/>
+        <Preference android:title="Go premium"
+            android:key="GoPremiumButton"
+            android:summary="Remove advertisements and trial limitations."/>
+    </PreferenceCategory>
+
+     
+    <PreferenceCategory android:key="Notifications" android:title="Notifications" local:iconSpaceReserved="false">
+        <com.debts.FixedListPreference
+            android:defaultValue="Not earlier than 7 days before payment date"
+            android:dialogTitle="Select time amount"
+            android:key="NotificationDeadlineUpcoming"
+            android:title="Payment Deadline Approaching Timespan"
+            android:summary="Select minimal time amount left for approaching payment date notifications."
+            local:iconSpaceReserved="false"/>
+        <com.debts.FixedListPreference
+            android:defaultValue="Not earlier than 7 days before payment date"
+            android:dialogTitle="Select time amount"
+            android:key="NotificationDeadlinePassed"
+            android:title="Payment Deadline Exceed Timespan"
+            android:summary="Select minimal time amount passed for payment date exceed notifications."
+            local:iconSpaceReserved="false"/>
+        <SwitchPreference
+            android:key="notifications_approaching_debt"
+            android:summaryOff="Debt deadline is approaching notifications are disabled."
+            android:summaryOn="Debt deadline is approaching notifications are enabled." local:iconSpaceReserved="false"
+            android:title="Upcoming Debts" />
+        <SwitchPreference
+            android:key="notifications_approaching_loan"
+            android:summaryOff="Loan payment deadline is approaching notifications are disabled."
+            android:summaryOn="Loan payment deadline is approaching notifications are enabled." local:iconSpaceReserved="false"
+            android:title="Upcoming Loans" />
+        <SwitchPreference
+            android:key="notifications_unpaid_debt"
+            android:summaryOff="Debt is still not paid notifications are disabled."
+            android:summaryOn="Debt is still not paid notifications are enabled." local:iconSpaceReserved="false"
+            android:title="Unpaid Debts" />
+        <SwitchPreference
+            android:key="notifications_unpaid_loan"
+            android:summaryOff="Debt is still not paid notifications are disabled."
+            android:summaryOn="Debt is still not paid notifications are enabled." local:iconSpaceReserved="false"
+            android:title="Unpaid Loans" />
+    </PreferenceCategory>
+</PreferenceScreen>

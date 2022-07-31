@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@android:color/white"
+    android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/image_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginRight="36dp"
+        app:srcCompat="@drawable/add_operation_02" />
+
+    <TextView
+        android:id="@+id/title_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:textSize="24dp"
+        android:text="Assign Contact"/>
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginTop="12dp"
+        android:textSize="16sp"
+        android:text="Assign contact to your new finance operation so you don't forget who you should call later on!"
+        android:gravity="center" />
+    
+    <FrameLayout android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_gravity="center"
+            android:id="@+id/container_of_list_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" 
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:elevation="2dp"
+            android:translationZ="1dp"
+            android:padding="12dp"
+            android:background="@drawable/editTextFlowBackground"
+            android:orientation="horizontal"
+            android:clickable="true"
+            app:MvxBind="Click PickContact">
+
+            <com.debts.AvatarView
+                android:layout_width="62dp"
+                android:layout_height="62dp"
+                android:layout_gravity="top"
+                android:layout_marginLeft="6dp"
+                android:id="@+id/avatarView"
+                android:background="@drawable/bubble_avatar"
+                app:MvxBind="Initials PickedContact, Converter=NameToInitials; ImagePath PickedContact.AvatarUrl" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginRight="9dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="12dp">
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/text_title"
+                    android:layout_gravity="center_vertical|left"
+                    app:MvxBind="Text PickedContact, Converter=PickedContactToText"
+                    android:textSize="17sp" />
+            </LinearLayout> 
+        </LinearLayout>
+    </FrameLayout>
+    
+</LinearLayout>

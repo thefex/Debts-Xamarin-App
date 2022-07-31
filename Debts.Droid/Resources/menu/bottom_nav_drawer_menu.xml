@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/finance_operations_section" android:title="Finances" android:checkable="false">
+            <menu android:checkable="false">
+                <item
+                    android:id="@+id/nav_budget"
+                    android:icon="@drawable/ic_coin_grey600_24dp"
+                    android:title="Budget" />
+                <item
+                    android:id="@+id/nav_all"
+                    android:icon="@drawable/ic_border_all_grey600_24dp"
+                    android:title="All (Debts and Loans)" />
+                <item
+                    android:id="@+id/nav_debts"
+                    android:icon="@drawable/ic_currency_usd_off_grey600_24dp"
+                    android:title="Debts" />
+                <item
+                    android:id="@+id/nav_loans"
+                    android:icon="@drawable/ic_currency_usd_grey600_24dp"
+                    android:title="Loans" />
+                <item
+                    android:id="@+id/nav_favorites"
+                    android:icon="@drawable/ic_star_grey600_24dp"
+                    android:title="Favorites"/>
+            </menu>
+        </item>
+    </group>
+  
+    <item android:title="General" android:id="@+id/general_section">
+        <menu>
+            <group android:checkableBehavior="none"> 
+                <item
+                    android:id="@+id/nav_contacts"
+                    android:icon="@drawable/ic_contacts_grey600_24dp"
+                    android:title="Contacts" />
+                <item
+                    android:id="@+id/nav_statistics"
+                    android:icon="@drawable/ic_finance_grey600_24dp"
+                    android:title="Statistics" />
+                <item
+                    android:id="@+id/nav_settings"
+                    android:icon="@drawable/ic_settings_grey600_24dp"
+                    android:title="Settings" />
+            </group>
+        </menu>
+    </item>
+</menu>

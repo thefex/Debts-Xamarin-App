@@ -1,0 +1,656 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.props" Condition="Exists('..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.props')" />
+  <Import Project="..\packages\PropertyChanged.Fody.3.0.1\build\PropertyChanged.Fody.props" Condition="Exists('..\packages\PropertyChanged.Fody.3.0.1\build\PropertyChanged.Fody.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProjectGuid>{8DF904FC-A6A0-4F51-B9C5-AB38CB637A1A}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Debts.iOS</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>Debts.iOS</AssemblyName>
+    <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>x86_64</MtouchArch>
+    <MtouchLink>Full</MtouchLink>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchExtraArgs>--linkskip=Debts.iOS --linkskip=Ninject --linkskip=Debts --linkskip=Debts.Data --linkskip=MvvmCross</MtouchExtraArgs>
+    <CodesignKey>iPhone Developer</CodesignKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>x86_64</MtouchArch>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>ARM64</MtouchArch>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchLink>Full</MtouchLink>
+    <MtouchExtraArgs>--linkskip=Debts.iOS --linkskip=Ninject --linkskip=Debts --linkskip=Debts.Data --linkskip=MvvmCross </MtouchExtraArgs>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchArch>ARM64</MtouchArch>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+    <MtouchLink>Full</MtouchLink>
+    <MtouchExtraArgs>--linkskip=Debts.iOS --linkskip=Ninject --linkskip=Debts --linkskip=Debts.Data --linkskip=MvvmCross</MtouchExtraArgs>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Config\AppColors.cs" />
+    <Compile Include="Config\AppMvxViewModelLocator.cs" />
+    <Compile Include="Config\iOSAppConstants.cs" />
+    <Compile Include="Config\Modules\PlatformNinjectModule.cs" />
+    <Compile Include="Config\Modules\PlatformNinjectModulesProvider.cs" />
+    <Compile Include="Config\MvxAppPresenter.cs" />
+    <Compile Include="Config\AppSetup.cs" />
+    <Compile Include="Config\Presenter\FilterBudgetByCategoryCustomPresenter.cs" />
+    <Compile Include="Config\Presenter\FilterBudgetByDateCustomPresenter.cs" />
+    <Compile Include="Config\Presenter\FilterFinancesByStateDateCustomPresenter.cs" />
+    <Compile Include="Config\Presenter\FilterStatisticsByDateCustomPresenter.cs" />
+    <Compile Include="Config\Presenter\ICustomPresenter.cs" />
+    <Compile Include="Config\Presenter\FilterFinancesByDateCustomPresenter.cs" />
+    <Compile Include="Config\Presenter\ImportContactsCustomPresenter.cs" />
+    <Compile Include="Config\Presenter\PickCategoryForFilterCustomPresenter.cs" />
+    <Compile Include="Config\ViewModelResolver\FilterBudgetCategoryViewModelResolver.cs" />
+    <Compile Include="Config\ViewModelResolver\FilterBudgetDateViewModelResolver.cs" />
+    <Compile Include="Config\ViewModelResolver\FilterFinancesByDateViewModelResolver.cs" />
+    <Compile Include="Config\ViewModelResolver\FilterFinancesByStateViewModelResolver.cs" />
+    <Compile Include="Config\ViewModelResolver\FilterStatisticsByDateViewModelResolver.cs" />
+    <Compile Include="Config\ViewModelResolver\IMvxCustomViewModelResolver.cs" />
+    <Compile Include="Config\ViewModelResolver\MvxCustomViewModelResolverContainer.cs" />
+    <Compile Include="Core\Data\BudgetDetailsHeaderSection.cs" />
+    <Compile Include="Core\Data\ContactDetailsFooterLoansStatisticsSection.cs" />
+    <Compile Include="Core\Data\ContactDetailsFooterDebtsStatisticsSection.cs" />
+    <Compile Include="Core\Data\ContactDetailsHeaderSection.cs" />
+    <Compile Include="Core\Data\EmptyFinanceOperationSection.cs" />
+    <Compile Include="Core\Data\EmptyNotesSection.cs" />
+    <Compile Include="Core\Data\FinanceDetailsFooterSection.cs" />
+    <Compile Include="Core\Data\FinanceDetailsHeaderSection.cs" />
+    <Compile Include="Core\Data\HeaderFinanceOperationSection.cs" />
+    <Compile Include="Core\Data\HeaderNotesSection.cs" />
+    <Compile Include="Core\Data\StatisticsForBudgetSection.cs" />
+    <Compile Include="Core\Data\StatisticsForDebtsSection.cs" />
+    <Compile Include="Core\Data\StatisticsForLoansSection.cs" />
+    <Compile Include="Core\Messenging\Observers\CheckboxQuestionMessageDialogMessageObserver.cs" />
+    <Compile Include="Core\Messenging\Observers\MessageDialogObserver.cs" />
+    <Compile Include="Core\Messenging\Observers\QuestionMessageDialogMessageObserver.cs" />
+    <Compile Include="Core\Messenging\Observers\ToastMvxObserver.cs" />
+    <Compile Include="Core\Plugin\MvxImagePickerTask.cs" />
+    <Compile Include="Core\Plugin\Plugin.cs" />
+    <Compile Include="Core\TableView\Budget\BudgetCategoryCell.cs" />
+    <Compile Include="Core\TableView\Budget\BudgetCell.cs" />
+    <Compile Include="Core\TableView\Budget\BudgetGroupCell.cs" />
+    <Compile Include="Core\TableView\Contacts\ContactCell.cs" />
+    <Compile Include="Core\TableView\Contacts\ContactDetailsHeaderCell.cs" />
+    <Compile Include="Core\TableView\Contacts\ContactDetailsDebtsStatisticsCell.cs" />
+    <Compile Include="Core\TableView\Contacts\FinanceOperationSectionHeaderLikeEmptyCell.cs" />
+    <Compile Include="Core\TableView\Contacts\FinanceOperationHeaderLikeCell.cs" />
+    <Compile Include="Core\TableView\Contacts\ContactDetailsLoanStatisticsCell.cs" />
+    <Compile Include="Core\TableView\Contacts\LetterGroupCell.cs" />
+    <Compile Include="Core\TableView\Dropdowns\DropDownTypeCell.cs" />
+    <Compile Include="Core\TableView\Finances\FinanceOperationCell.cs" />
+    <Compile Include="Core\TableView\Finances\FinancesOperationGroupCell.cs" />
+    <Compile Include="Core\TableView\Menu\MenuGroupItemCell.cs" />
+    <Compile Include="Core\TableView\Menu\MenuItemCell.cs" />
+    <Compile Include="Core\TableView\Menu\MenuTableViewSource.cs" />
+    <Compile Include="Core\TableView\Menu\PremiumMenuItemCell.cs" />
+    <Compile Include="Core\TableView\Sections\BudgetDetailsHeaderCell.cs" />
+    <Compile Include="Core\TableView\Sections\HeaderLikeEmptyNoteCell.cs" />
+    <Compile Include="Core\TableView\Sections\FinanceDetailsFooterCell.cs" />
+    <Compile Include="Core\TableView\Sections\FinanceDetailsHeaderCell.cs" />
+    <Compile Include="Core\TableView\Sections\HeaderLikeNoteCell.cs" />
+    <Compile Include="Core\TableView\Sections\NoteCell.cs" />
+    <Compile Include="Core\TableView\Sections\StatisticsCell.cs" />
+    <Compile Include="Core\TableView\Statistics\StatisticsBudgetCell.cs" />
+    <Compile Include="Core\TableView\Statistics\StatisticsDebtsCell.cs" />
+    <Compile Include="Core\TableView\Statistics\StatisticsLoanCell.cs" />
+    <Compile Include="Core\ValueConverters\BooleanToMethodProviderValueConverter.cs" />
+    <Compile Include="Core\ValueConverters\BudgetCategoryTypeToBackgroundColor.cs" />
+    <Compile Include="Core\ValueConverters\MenuViewModelToPremiumStateTextValueConverter.cs" />
+    <Compile Include="Core\ValueConverters\PaymentDateToImageValueConverter.cs" />
+    <Compile Include="Core\ValueConverters\FinanceGroupKeyValueConverter.cs" />
+    <Compile Include="Core\ValueConverters\FinanceOperationTypeToBackgroundColor.cs" />
+    <Compile Include="Core\ValueConverters\GenericValueConverter.cs" />
+    <Compile Include="Core\ValueConverters\PaymentDateToTintColorValueConverter.cs" />
+    <Compile Include="Core\ValueConverters\PaymentDetailsToBackgroundColorValueConverter.cs" />
+    <Compile Include="Core\ValueConverters\TextToSearchAttributedTextValueConverter.cs" />
+    <Compile Include="Core\VIews\AvatarView.cs" />
+    <Compile Include="Core\VIews\KeyboardVisibilityManager.cs" />
+    <Compile Include="Core\VIews\ModalPickerViewController.cs" />
+    <Compile Include="Core\VIews\SlideViewKeyboardVisibilityManager.cs" />
+    <Compile Include="Core\VIews\ToastViewBuilder.cs" />
+    <Compile Include="Core\VIews\UIPaddingLabel.cs" />
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="Services\AppGrowth\AppStoreRateAppService.cs" />
+    <Compile Include="Services\AppGrowth\FirebaseAppStoreShareLinkBuilderService.cs" />
+    <Compile Include="Services\AppGrowth\FirebaseDynamicLinkHandler.cs" />
+    <Compile Include="Services\AppGrowth\iOSAdvertisementService.cs" />
+    <Compile Include="Services\AppGrowth\iOSAppRelatedStatisticsService.cs" />
+    <Compile Include="Services\Contacts\CNContactConverter.cs" />
+    <Compile Include="Services\Contacts\PhoneContactsService.cs" />
+    <Compile Include="Services\iOSDisplayNameProvider.cs" />
+    <Compile Include="Services\iOSPermissionService.cs" />
+    <Compile Include="Services\iOSPlatform.cs" />
+    <Compile Include="Services\Notifications\AppNotificationDelegate.cs" />
+    <Compile Include="Services\Notifications\iOSNotificationsWorkScheduler.cs" />
+    <Compile Include="Services\Notifications\NotificationTappedHandler.cs" />
+    <Compile Include="Services\Payments\AppStoreBillingService.cs" />
+    <Compile Include="Services\PhoneCall\CallDetectorController.cs" />
+    <Compile Include="Services\PhoneCall\PhoneCallPermission.cs" />
+    <Compile Include="Services\StartServiceNotificationsPermissionProxy.cs" />
+    <Compile Include="Services\UserDefaultsStorageService.cs" />
+    <Compile Include="Services\Walkthrough\BudgetWalkthroughService.cs" />
+    <Compile Include="Services\Walkthrough\ContactListWalkthroughService.cs" />
+    <Compile Include="Services\Walkthrough\FinanceDetailsWalkthroughService.cs" />
+    <Compile Include="Services\Walkthrough\MainWalkthroughService.cs" />
+    <Compile Include="Services\Walkthrough\PlatformWalkthroughService.cs" />
+    <Compile Include="Services\Walkthrough\StatisticsWalkthroughService.cs" />
+    <Compile Include="Utilities\Extensions\UIViewControllerExtensions.cs" />
+    <Compile Include="Utilities\Extensions\UIViewExtensions.cs" />
+    <Compile Include="Utilities\TableView\DefaultMvxTemplateSelector.cs" />
+    <Compile Include="Utilities\TableView\Grouped\BudgetDetailsSectionTemplateSelector.cs" />
+    <Compile Include="Utilities\TableView\Grouped\BudgetListTemplateSelector.cs" />
+    <Compile Include="Utilities\TableView\Grouped\ContactDetailsSectionTemplateSelector.cs" />
+    <Compile Include="Utilities\TableView\Grouped\ContactListTemplateSelector.cs" />
+    <Compile Include="Utilities\TableView\Grouped\FinanceDetailsSectionTemplateSelector.cs" />
+    <Compile Include="Utilities\TableView\Grouped\FinanceListTemplateSelector.cs" />
+    <Compile Include="Utilities\TableView\Grouped\StatisticsSectionTemplateSelector.cs" />
+    <Compile Include="Utilities\TableView\MvxBaseTableViewCell.cs" />
+    <Compile Include="Utilities\TableView\MvxBaseTableViewSource.cs" />
+    <Compile Include="Utilities\TableView\MvxGroupedBaseTableViewSource.cs" />
+    <Compile Include="Utilities\TableView\MvxGroupedTemplateSelector.cs" />
+    <Compile Include="Utilities\TableView\MvxTemplateSelector.cs" />
+    <Compile Include="ViewControllers\Base\BaseListViewController.cs" />
+    <Compile Include="ViewControllers\Base\BaseViewController.cs" />
+    <Compile Include="ViewControllers\Budget\AddBudet\AssignCategoryForBudgetPageViewController.cs" />
+    <Compile Include="ViewControllers\Budget\AddBudet\EnterAmountCurrencyBudgetPageViewController.cs" />
+    <Compile Include="ViewControllers\Budget\AddBudet\EnterBudgetNamePageViewController.cs" />
+    <Compile Include="ViewControllers\Budget\AddBudgetViewController.cs" />
+    <Compile Include="ViewControllers\Budget\BasePickBudgetCategoryViewController.cs" />
+    <Compile Include="ViewControllers\Budget\BudgetViewController.cs" />
+    <Compile Include="ViewControllers\Budget\BudgetDetailsViewController.cs" />
+    <Compile Include="ViewControllers\Budget\PickBudgetCategoryForFilterViewController.cs" />
+    <Compile Include="ViewControllers\Budget\PickBudgetCategoryViewController.cs" />
+    <Compile Include="ViewControllers\Contacts\AddContactViewController.cs" />
+    <Compile Include="ViewControllers\Contacts\BaseContactsViewController.cs" />
+    <Compile Include="ViewControllers\Contacts\ContactDetailsViewController.cs" />
+    <Compile Include="ViewControllers\Contacts\ContactsViewController.cs" />
+    <Compile Include="ViewControllers\Contacts\ImportContactsViewController.cs" />
+    <Compile Include="ViewControllers\Contacts\PickContactViewController.cs" />
+    <Compile Include="ViewControllers\Finances\AddFinanceNoteViewController.cs" />
+    <Compile Include="ViewControllers\Finances\AddFinanceViewController.cs" />
+    <Compile Include="ViewControllers\Finances\AddFinance\AssignContactForAddFinancePageViewController.cs" />
+    <Compile Include="ViewControllers\Finances\AddFinance\EnterAmountCurrencyFinanceOperationPageViewController.cs" />
+    <Compile Include="ViewControllers\Finances\AddFinance\EnterFinanceOperationNamePageViewController.cs" />
+    <Compile Include="ViewControllers\Finances\AddFinance\SelectDeadlineAddFinanceOperationPageViewController.cs" />
+    <Compile Include="ViewControllers\Finances\AllFinancesViewController.cs" />
+    <Compile Include="ViewControllers\Finances\DebtsFinancesViewController.cs" />
+    <Compile Include="ViewControllers\Finances\Details\MFMessageComposeViewControllerExtended.cs" />
+    <Compile Include="ViewControllers\Finances\FavoritesFinancesViewController.cs" />
+    <Compile Include="ViewControllers\Finances\FinanceDetailsViewController.cs" />
+    <Compile Include="ViewControllers\Finances\FinancesViewController.cs" />
+    <Compile Include="ViewControllers\Finances\LoansFinancesViewController.cs" />
+    <Compile Include="ViewControllers\MainViewController.cs" />
+    <Compile Include="ViewControllers\Main\GoPremiumViewController.cs" />
+    <Compile Include="ViewControllers\Main\RateAppViewController.cs" />
+    <Compile Include="ViewControllers\Menu\FilterBudgetByCategoryViewController.cs" />
+    <Compile Include="ViewControllers\Menu\FilterBudgetByDateRangeViewController.cs" />
+    <Compile Include="ViewControllers\Menu\FilterFinancesByDateRangeViewController.cs" />
+    <Compile Include="ViewControllers\Menu\FilterFinancesByStateRangeViewController.cs" />
+    <Compile Include="ViewControllers\Menu\FilterStatisticsByDateRangeViewController.cs" />
+    <Compile Include="ViewControllers\Menu\MenuViewController.cs" />
+    <Compile Include="ViewControllers\Menu\PremiumMenuViewController.cs" />
+    <Compile Include="ViewControllers\Onboard\FifthCloudOnboardViewController.cs" />
+    <Compile Include="ViewControllers\Onboard\FirstOnboardViewController.cs" />
+    <Compile Include="ViewControllers\Onboard\FourthNotifyDebtorViewController.cs" />
+    <Compile Include="ViewControllers\Onboard\OnboardPageViewController.cs" />
+    <Compile Include="ViewControllers\Onboard\SecondPhoneContactsOnboardViewController.cs" />
+    <Compile Include="ViewControllers\Onboard\SixOnboardViewController.cs" />
+    <Compile Include="ViewControllers\Onboard\ThirdGpsOnboardViewController.cs" />
+    <Compile Include="ViewControllers\SettingsViewController.cs" />
+    <Compile Include="ViewControllers\StartViewController.cs" />
+    <Compile Include="ViewControllers\StatisticsViewController.cs" />
+    <Compile Include="ViewControllers\Transition\BudgetDetailsSubviewTransitionAction.cs" />
+    <Compile Include="ViewControllers\Transition\BudgetListSubViewTransitionAction.cs" />
+    <Compile Include="ViewControllers\Transition\ContactListSubViewTransitionAction.cs" />
+    <Compile Include="ViewControllers\Transition\DefaultSubviewTransitionAction.cs" />
+    <Compile Include="ViewControllers\Transition\FinanceDetailsSubViewTransitionAction.cs" />
+    <Compile Include="ViewControllers\Transition\FinanceListSubViewTransitionAction.cs" />
+    <Compile Include="ViewControllers\Transition\ITransitionSubViewAction.cs" />
+    <Compile Include="ViewControllers\Transition\StatisticsSubViewTransitionAction.cs" />
+    <Compile Include="ViewControllers\Transition\SubViewTransitionInvoker.cs" />
+    <Compile Include="ViewModels\MenuViewModel.cs" />
+    <None Include="Info.plist" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="Entitlements.plist" />
+    <InterfaceDefinition Include="LaunchScreen.storyboard" />
+    <None Include="packages.config" />
+    <Compile Include="Config\LinkerPleaseInclude.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Cirrious.FluentLayouts.Touch, Version=2.6.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\Cirrious.FluentLayout.2.9.0\lib\Xamarin.iOS10\Cirrious.FluentLayouts.Touch.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DT.iOS.DatePickerDialog, Version=1.0.7079.22430, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\Xamarin.iOS.DatePickerDialog.1.0.3\lib\Xamarin.iOS10\DT.iOS.DatePickerDialog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DynamicData, Version=6.12.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\DynamicData.6.12.5\lib\netstandard2.0\DynamicData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FFImageLoading, Version=2.4.11.982, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\Xamarin.FFImageLoading.2.4.11.982\lib\Xamarin.iOS10\FFImageLoading.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FFImageLoading.Platform, Version=2.4.11.982, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\Xamarin.FFImageLoading.2.4.11.982\lib\Xamarin.iOS10\FFImageLoading.Platform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FFImageLoading.Transformations, Version=2.4.11.982, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\Xamarin.FFImageLoading.Transformations.2.4.11.982\lib\Xamarin.iOS10\FFImageLoading.Transformations.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Firebase.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\Xamarin.Firebase.iOS.Core.6.1.0\lib\xamarinios10\Firebase.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Firebase.DynamicLinks, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\Xamarin.Firebase.iOS.DynamicLinks.4.0.1\lib\xamarinios10\Firebase.DynamicLinks.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Google.MobileAds, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\Xamarin.Google.iOS.MobileAds.7.47.0\lib\xamarinios10\Google.MobileAds.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="JSQMessagesViewController, Version=1.0.5767.23835, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\JSQMessagesViewController.7.2.0\lib\Xamarin.iOS\JSQMessagesViewController.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Lottie.iOS, Version=2.5.7.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\Com.Airbnb.iOS.Lottie.2.5.7\lib\xamarinios10\Lottie.iOS.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AppCenter, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\Microsoft.AppCenter.2.6.4\lib\Xamarin.iOS10\Microsoft.AppCenter.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AppCenter.Crashes, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\Microsoft.AppCenter.Crashes.2.6.4\lib\Xamarin.iOS10\Microsoft.AppCenter.Crashes.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AppCenter.Crashes.iOS.Bindings, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\Microsoft.AppCenter.Crashes.2.6.4\lib\Xamarin.iOS10\Microsoft.AppCenter.Crashes.iOS.Bindings.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AppCenter.iOS.Bindings, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\Microsoft.AppCenter.2.6.4\lib\Xamarin.iOS10\Microsoft.AppCenter.iOS.Bindings.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MvvmCross, Version=6.4.2.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\MvvmCross.6.4.2\lib\xamarinios10\MvvmCross.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MvvmCross.Plugin.Color, Version=6.4.2.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\MvvmCross.Plugin.Color.6.4.2\lib\xamarinios10\MvvmCross.Plugin.Color.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MvvmCross.Plugin.Messenger, Version=6.2.3.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\MvvmCross.Plugin.Messenger.6.2.3\lib\netstandard2.0\MvvmCross.Plugin.Messenger.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MvvmCross.Plugin.ResxLocalization, Version=6.3.1.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\MvvmCross.Plugin.ResxLocalization.6.3.1\lib\netstandard2.0\MvvmCross.Plugin.ResxLocalization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject, Version=3.0.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7">
+      <HintPath>..\packages\Portable.Ninject.3.3.1\lib\Xamarin.iOS\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PropertyChanged, Version=3.0.1.0, Culture=neutral, PublicKeyToken=ee3ee20bcf148ddd">
+      <HintPath>..\packages\PropertyChanged.Fody.3.0.1\lib\netstandard1.0\PropertyChanged.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SQLite-net, Version=1.5.231.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\sqlite-net-pcl.1.5.231\lib\netstandard1.1\SQLite-net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.batteries_green, Version=1.1.11.121, Culture=neutral, PublicKeyToken=a84b7dcfb1391f7f">
+      <HintPath>..\packages\SQLitePCLRaw.bundle_green.1.1.11\lib\Xamarin.iOS10\SQLitePCLRaw.batteries_green.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.batteries_v2, Version=1.1.11.121, Culture=neutral, PublicKeyToken=8226ea5df37bcae9">
+      <HintPath>..\packages\SQLitePCLRaw.bundle_green.1.1.11\lib\Xamarin.iOS10\SQLitePCLRaw.batteries_v2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.core, Version=1.1.11.121, Culture=neutral, PublicKeyToken=1488e028ca7ab535">
+      <HintPath>..\packages\SQLitePCLRaw.core.1.1.11\lib\Xamarin.iOS10\SQLitePCLRaw.core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.provider.sqlite3, Version=1.1.11.121, Culture=neutral, PublicKeyToken=62684c7b4f184e3f">
+      <HintPath>..\packages\SQLitePCLRaw.provider.sqlite3.ios_unified.1.1.11\lib\Xamarin.iOS10\SQLitePCLRaw.provider.sqlite3.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Reactive, Version=4.1.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263">
+      <HintPath>..\packages\System.Reactive.4.1.5\lib\netstandard2.0\System.Reactive.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="WebP.Touch, Version=1.0.6628.22311, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\WebP.Touch.1.0.8\lib\Xamarin.iOS10\WebP.Touch.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xamarin.Essentials, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\Xamarin.Essentials.1.4.0-pre2\lib\xamarinios10\Xamarin.Essentials.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLiteNetExtensions">
+      <HintPath>..\packages\SQLiteNetExtensions.2.0.0\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\SQLiteNetExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLiteNetExtensionsAsync">
+      <HintPath>..\packages\SQLiteNetExtensions.Async.2.1.0\lib\netstandard1.1\SQLiteNetExtensionsAsync.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Permissions">
+      <HintPath>..\packages\Plugin.Permissions.3.0.0.12\lib\xamarinios10\Plugin.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugin.Location">
+      <HintPath>..\packages\MvvmCross.Plugin.Location.6.3.1\lib\xamarinios10\MvvmCross.Plugin.Location.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK-1.0" />
+    <Reference Include="Humanizer">
+      <HintPath>..\packages\Humanizer.Core.2.7.9\lib\netstandard2.0\Humanizer.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing.Common.dll" />
+    <Reference Include="MvvmCross.Plugin.PictureChooser">
+      <HintPath>..\packages\MvvmCross.Plugin.PictureChooser.6.4.1\lib\xamarinios10\MvvmCross.Plugin.PictureChooser.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialComponents">
+      <HintPath>..\packages\Xamarin.iOS.MaterialComponents.72.2.0.1\lib\Xamarin.iOS\MaterialComponents.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\40x40.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\60x60.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\58x58.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\80x80.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\87x87.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\120x120.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\120x120-1.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\180x180.png" />
+    <ImageAsset Include="Assets.xcassets\brand_logo.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\plus.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\menu_hamburger.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\plus.imageset\plus-2.pdf" />
+    <ImageAsset Include="Assets.xcassets\menu_hamburger.imageset\qz.pdf" />
+    <ImageAsset Include="Assets.xcassets\plus.imageset\pdfresizer.com-pdf-resize.pdf" />
+    <ImageAsset Include="Assets.xcassets\finance_operation_all.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\finance_operation_all.imageset\pdfresizer.com-pdf-resize %286%29.pdf" />
+    <ImageAsset Include="Assets.xcassets\finance_operation_debts.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\finance_operation_debts.imageset\pdfresizer.com-pdf-resize %289%29.pdf" />
+    <ImageAsset Include="Assets.xcassets\finance_operation_loans.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\finance_operation_loans.imageset\pdfresizer.com-pdf-resize.pdf" />
+    <ImageAsset Include="Assets.xcassets\finance_operation_favorites.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\finance_operation_favorites.imageset\pdfresizer.com-pdf-resize %282%29.pdf" />
+    <ImageAsset Include="Assets.xcassets\budget.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\budget.imageset\pdfresizer.com-pdf-resize %284%29.pdf" />
+    <ImageAsset Include="Assets.xcassets\contacts.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\contacts.imageset\pdfresizer.com-pdf-resize %2813%29.pdf" />
+    <ImageAsset Include="Assets.xcassets\statistics.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\settings.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\statistics.imageset\pdfresizer.com-pdf-resize %288%29.pdf" />
+    <ImageAsset Include="Assets.xcassets\settings.imageset\pdfresizer.com-pdf-resize %2812%29.pdf" />
+    <ImageAsset Include="Assets.xcassets\search.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\search.imageset\pdfresizer.com-pdf-resize %285%29.pdf" />
+    <ImageAsset Include="Assets.xcassets\filter_status.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\filter_status.imageset\pdfresizer.com-pdf-resize %2811%29.pdf" />
+    <ImageAsset Include="Assets.xcassets\filter_date.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\filter_date.imageset\pdfresizer.com-pdf-resize %281%29.pdf" />
+    <ImageAsset Include="Assets.xcassets\star_half.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\star_full.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\star_empty.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\import.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\import.imageset\pdfresizer.com-pdf-resize %2814%29.pdf" />
+    <ImageAsset Include="Assets.xcassets\add_operation_01.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\add_operation_02.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\add_operation_03.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\add_operation_04.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\add_operation_01.imageset\add_operation_01-1.pdf" />
+    <ImageAsset Include="Assets.xcassets\add_operation_02.imageset\add_operation_02.pdf" />
+    <ImageAsset Include="Assets.xcassets\add_operation_03.imageset\add_operation_03.pdf" />
+    <ImageAsset Include="Assets.xcassets\add_operation_04.imageset\add_operation_04.pdf" />
+    <ImageAsset Include="Assets.xcassets\chevron_down.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\chevron_down.imageset\chevron-down %281%29.pdf" />
+    <ImageAsset Include="Assets.xcassets\close.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\close.imageset\close %281%29.pdf" />
+    <ImageAsset Include="Assets.xcassets\check.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\check.imageset\pdfresizer.com-pdf-resize %2815%29.pdf" />
+    <ImageAsset Include="Assets.xcassets\phone.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\phone.imageset\phone %281%29.pdf" />
+    <ImageAsset Include="Assets.xcassets\sms.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\sms.imageset\message.pdf" />
+    <ImageAsset Include="Assets.xcassets\note.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\note.imageset\note-text %281%29.pdf" />
+    <ImageAsset Include="Assets.xcassets\share.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\share.imageset\share-variant.pdf" />
+    <ImageAsset Include="Assets.xcassets\cash.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\cash.imageset\cash.pdf" />
+    <ImageAsset Include="Assets.xcassets\credit_card.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\credit_card.imageset\credit-card-outline.pdf" />
+    <ImageAsset Include="Assets.xcassets\face_happy.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\face_neutral.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\face_sad.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\map_marker.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\map_marker.imageset\map-marker.pdf" />
+    <ImageAsset Include="Assets.xcassets\royal.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\swipe_call.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\swipe_delete.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\swipe_sms.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\swipe_finalize.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\swipe_call.imageset\phone %282%29.pdf" />
+    <ImageAsset Include="Assets.xcassets\swipe_delete.imageset\phone.pdf" />
+    <ImageAsset Include="Assets.xcassets\swipe_sms.imageset\phone.pdf" />
+    <ImageAsset Include="Assets.xcassets\swipe_finalize.imageset\phone.pdf" />
+    <ImageAsset Include="Assets.xcassets\face_sad.imageset\emoticon-sad-outline-1.pdf" />
+    <ImageAsset Include="Assets.xcassets\face_neutral.imageset\emoticon-neutral-outline-1.pdf" />
+    <ImageAsset Include="Assets.xcassets\face_happy.imageset\emoticon-happy-outline %281%29.pdf" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\1024x1024round_no_alpha.png" />
+    <ImageAsset Include="Assets.xcassets\brand_logo.imageset\brand_logo_48.pdf" />
+    <ImageAsset Include="Assets.xcassets\star_empty.imageset\png2pdf %281%29.pdf" />
+    <ImageAsset Include="Assets.xcassets\star_full.imageset\png2pdf %284%29.pdf" />
+    <ImageAsset Include="Assets.xcassets\star_half.imageset\png2pdf %285%29.pdf" />
+    <ImageAsset Include="Assets.xcassets\royal.imageset\png2pdf %283%29.pdf" />
+    <ImageAsset Include="Assets.xcassets\star_empty_2.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\star_empty_2.imageset\pdfresizer.com-pdf-resize %2810%29 %281%29.pdf" />
+    <ImageAsset Include="Assets.xcassets\Image-1.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\food_fork_drink.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\food_fork_drink.imageset\food-fork-drink-_1_.pdf" />
+    <ImageAsset Include="Assets.xcassets\shopping.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\shopping.imageset\cart.pdf" />
+    <ImageAsset Include="Assets.xcassets\home_city.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\home_city.imageset\home-city.pdf" />
+    <ImageAsset Include="Assets.xcassets\train_car.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\train_car.imageset\train-car.pdf" />
+    <ImageAsset Include="Assets.xcassets\car.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\car.imageset\car.pdf" />
+    <ImageAsset Include="Assets.xcassets\human_handsup.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\human_handsup.imageset\human-handsup.pdf" />
+    <ImageAsset Include="Assets.xcassets\laptop_mac.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\laptop_mac.imageset\laptop-mac.pdf" />
+    <ImageAsset Include="Assets.xcassets\bank.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\bank.imageset\bank.pdf" />
+    <ImageAsset Include="Assets.xcassets\party.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\party.imageset\party-popper.pdf" />
+    <ImageAsset Include="Assets.xcassets\kids.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\kids.imageset\human-child.pdf" />
+    <ImageAsset Include="Assets.xcassets\cash_multiple.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\cash_multiple.imageset\cash-plus.pdf" />
+    <ImageAsset Include="Assets.xcassets\coin_outline.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\coin_outline.imageset\currency-usd-circle-outline.pdf" />
+    <ImageAsset Include="Assets.xcassets\expenses_regular.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\expenses_regular.imageset\credit-card.pdf" />
+    <ImageAsset Include="Assets.xcassets\Other.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Other.imageset\help.pdf" />
+    <ImageAsset Include="Assets.xcassets\pill.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\pill.imageset\pill %281%29.pdf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="Assets.xcassets\brand_logo.imageset\" />
+    <Folder Include="Assets.xcassets\AppIcons.appiconset\" />
+    <Folder Include="Assets.xcassets\brand_logo.imageset\" />
+    <Folder Include="ViewManager" />
+    <Folder Include="Assets.xcassets\plus.imageset\" />
+    <Folder Include="Assets.xcassets\menu_hamburger.imageset\" />
+    <Folder Include="Assets.xcassets\finance_operation_all.imageset\" />
+    <Folder Include="Assets.xcassets\finance_operation_debts.imageset\" />
+    <Folder Include="Assets.xcassets\finance_operation_loans.imageset\" />
+    <Folder Include="Assets.xcassets\finance_operation_favorites.imageset\" />
+    <Folder Include="Assets.xcassets\budget.imageset\" />
+    <Folder Include="Assets.xcassets\contacts.imageset\" />
+    <Folder Include="Assets.xcassets\statistics.imageset\" />
+    <Folder Include="Assets.xcassets\settings.imageset\" />
+    <Folder Include="Assets.xcassets\search.imageset\" />
+    <Folder Include="Assets.xcassets\filter_status.imageset\" />
+    <Folder Include="Assets.xcassets\filter_date.imageset\" />
+    <Folder Include="Assets.xcassets\star_half.imageset\" />
+    <Folder Include="Assets.xcassets\star_full.imageset\" />
+    <Folder Include="Assets.xcassets\star_empty.imageset\" />
+    <Folder Include="Assets.xcassets\import.imageset\" />
+    <Folder Include="Assets.xcassets\add_operation_01.imageset\" />
+    <Folder Include="Assets.xcassets\add_operation_02.imageset\" />
+    <Folder Include="Assets.xcassets\add_operation_03.imageset\" />
+    <Folder Include="Assets.xcassets\add_operation_04.imageset\" />
+    <Folder Include="Assets.xcassets\chevron_down.imageset\" />
+    <Folder Include="Assets.xcassets\close.imageset\" />
+    <Folder Include="Assets.xcassets\check.imageset\" />
+    <Folder Include="Assets.xcassets\phone.imageset\" />
+    <Folder Include="Assets.xcassets\sms.imageset\" />
+    <Folder Include="Assets.xcassets\note.imageset\" />
+    <Folder Include="Assets.xcassets\share.imageset\" />
+    <Folder Include="Assets.xcassets\cash.imageset\" />
+    <Folder Include="Assets.xcassets\credit_card.imageset\" />
+    <Folder Include="Assets.xcassets\face_happy.imageset\" />
+    <Folder Include="Assets.xcassets\face_neutral.imageset\" />
+    <Folder Include="Assets.xcassets\face_sad.imageset\" />
+    <Folder Include="Assets.xcassets\map_marker.imageset\" />
+    <Folder Include="Assets.xcassets\royal.imageset\" />
+    <Folder Include="Assets.xcassets\swipe_call.imageset\" />
+    <Folder Include="Assets.xcassets\swipe_delete.imageset\" />
+    <Folder Include="Assets.xcassets\swipe_sms.imageset\" />
+    <Folder Include="Assets.xcassets\swipe_finalize.imageset\" />
+    <Folder Include="Assets.xcassets\in_app_icon.imageset\" />
+    <Folder Include="Assets.xcassets\star_empty_2.imageset\" />
+    <Folder Include="Assets.xcassets\food_fork_drink.imageset\" />
+    <Folder Include="Assets.xcassets\shopping.imageset\" />
+    <Folder Include="Assets.xcassets\home_city.imageset\" />
+    <Folder Include="Assets.xcassets\train_car.imageset\" />
+    <Folder Include="Assets.xcassets\car.imageset\" />
+    <Folder Include="Assets.xcassets\human_handsup.imageset\" />
+    <Folder Include="Assets.xcassets\laptop_mac.imageset\" />
+    <Folder Include="Assets.xcassets\bank.imageset\" />
+    <Folder Include="Assets.xcassets\party.imageset\" />
+    <Folder Include="Assets.xcassets\kids.imageset\" />
+    <Folder Include="Assets.xcassets\cash_multiple.imageset\" />
+    <Folder Include="Assets.xcassets\coin_outline.imageset\" />
+    <Folder Include="Assets.xcassets\expenses_regular.imageset\" />
+    <Folder Include="Assets.xcassets\Other.imageset\" />
+    <Folder Include="Assets.xcassets\pill.imageset\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Debts.Data\Debts.Data.csproj">
+      <Project>{2e967c8a-4835-4a13-92d5-404b5faba5c2}</Project>
+      <Name>Debts.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Debts\Debts.csproj">
+      <Project>{0b0dd8ad-549a-4283-bf18-d55ed5d84a45}</Project>
+      <Name>Debts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Libraries\FPT.Framework.iOS.UI.Dropdown\FPT.Framework.iOS.UI.DropDown.csproj">
+      <Project>{1927b121-a5a6-4e92-8c1b-9a00a753dfc3}</Project>
+      <Name>FPT.Framework.iOS.UI.DropDown</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Libraries\SpotlightXamarin.iOS\SpotlightXamarin.IOS.csproj">
+      <Project>{0ee7b492-5ccc-4848-8d1b-3ad6deb524d6}</Project>
+      <Name>SpotlightXamarin.IOS</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ITunesArtwork Include="iTunesArtwork%402x" />
+    <ITunesArtwork Include="iTunesArtwork" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\01_onboard.json" />
+    <BundleResource Include="Resources\02_onboard.json" />
+    <BundleResource Include="Resources\03_onboard.json" />
+    <BundleResource Include="Resources\04_onboard.json" />
+    <BundleResource Include="Resources\05_onboard.json" />
+    <BundleResource Include="Resources\06_onboard.json" />
+    <BundleResource Include="Resources\default_empty_list.json" />
+    <BundleResource Include="Resources\loader_animation.json" />
+    <BundleResource Include="Resources\premium_bear.json" />
+    <BundleResource Include="Resources\sad_bear_empty_list.json" />
+    <BundleResource Include="Resources\star_01.json" />
+    <BundleResource Include="Resources\star_02.json" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <Import Project="..\packages\Fody.5.1.1\build\Fody.targets" Condition="Exists('..\packages\Fody.5.1.1\build\Fody.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105.The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Fody.5.1.1\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.5.1.1\build\Fody.targets'))" />
+    <Error Condition="!Exists('..\packages\PropertyChanged.Fody.3.0.1\build\PropertyChanged.Fody.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\PropertyChanged.Fody.3.0.1\build\PropertyChanged.Fody.props'))" />
+    <Error Condition="!Exists('..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.props'))" />
+    <Error Condition="!Exists('..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.targets'))" />
+    <Error Condition="!Exists('..\packages\Xamarin.Firebase.iOS.Core.6.1.0\build\Xamarin.Firebase.iOS.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Firebase.iOS.Core.6.1.0\build\Xamarin.Firebase.iOS.Core.targets'))" />
+    <Error Condition="!Exists('..\packages\Xamarin.Google.iOS.MobileAds.7.47.0\build\Xamarin.Google.iOS.MobileAds.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Google.iOS.MobileAds.7.47.0\build\Xamarin.Google.iOS.MobileAds.targets'))" />
+  </Target>
+  <Import Project="..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.targets" Condition="Exists('..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.targets')" />
+  <Import Project="..\packages\Xamarin.Firebase.iOS.Core.6.1.0\build\Xamarin.Firebase.iOS.Core.targets" Condition="Exists('..\packages\Xamarin.Firebase.iOS.Core.6.1.0\build\Xamarin.Firebase.iOS.Core.targets')" />
+  <Import Project="..\packages\Xamarin.Google.iOS.MobileAds.7.47.0\build\Xamarin.Google.iOS.MobileAds.targets" Condition="Exists('..\packages\Xamarin.Google.iOS.MobileAds.7.47.0\build\Xamarin.Google.iOS.MobileAds.targets')" />
+</Project>

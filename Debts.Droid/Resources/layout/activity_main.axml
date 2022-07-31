@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_background"
+    android:id="@+id/LayoutRoot">
+        
+        <FrameLayout android:id="@+id/tutorialViews"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="3dp" 
+            android:layout_gravity="bottom">
+                
+                <View
+                    android:id="@+id/menu_tutorial_stub_view"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                android:layout_gravity="center_vertical|left"
+                android:layout_marginLeft="12dp"/>
+
+                <View android:id="@+id/date_tutorial_stub_view"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center_vertical|right"
+                    android:layout_marginRight="60dp"/> 
+                
+                <View android:id="@+id/filter_tutorial_stub_view"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                    android:layout_gravity="center_vertical|right"
+                        android:layout_marginRight="12dp"/>
+        </FrameLayout>
+        
+        <FrameLayout android:layout_width="match_parent"        
+                android:layout_height="match_parent"
+                 android:background="@color/gray_background"
+                android:id="@+id/FragmentRoot"/>
+
+        <FrameLayout android:layout_width="match_parent"
+            android:layout_height="match_parent" 
+            android:id="@+id/FragmentRoot_SubPage"/> <!-- adding fragments to backstack ruins add dialog presenters.. so I had to add additional layout for sub-page fragments -->
+ 
+        <android.support.design.bottomappbar.BottomAppBar
+            android:theme="@style/Widget.MaterialComponents.BottomAppBar"
+            android:id="@+id/bottomAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:backgroundTint="@color/primary"
+            app:fabAlignmentMode="center"
+            android:layout_gravity="bottom"
+            app:buttonGravity="top"
+            app:hideOnScroll="true"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:navigationIcon="@drawable/menu"/>
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/plus"
+            app:borderWidth="0dp"
+            app:fabSize="normal" 
+            app:MvxBind="Click Add"
+            app:useCompatPadding="true" 
+            app:layout_anchor="@id/bottomAppBar"/>
+        
+        <FrameLayout android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/add_fragment_presenter">
+                
+        </FrameLayout>
+
+        <FrameLayout android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/pick_contacts_presenter">
+
+        </FrameLayout>
+        
+        <LinearLayout android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_gravity="top"
+            android:paddingTop="4.5dp"
+            android:paddingBottom="4.5dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:alpha="0"
+            android:id="@+id/custom_snackbar_container"
+            android:background="@drawable/material_v2_snackbar_info_background"
+            android:layout_marginTop="6dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:textColor="@android:color/white"
+                    android:id="@+id/custom_snackbar_text"/>
+                <android.support.design.button.MaterialButton
+                    android:id="@+id/custom_snackbar_action"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:textColor="@android:color/white"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="UNDO"/>
+        </LinearLayout>
+     
+</android.support.design.widget.CoordinatorLayout>

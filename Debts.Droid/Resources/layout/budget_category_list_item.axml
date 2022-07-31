@@ -1,0 +1,46 @@
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" 
+    android:id="@+id/root_view">
+    
+    <LinearLayout
+        android:id="@+id/container_of_list_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_item_list_tapped"
+        android:paddingTop="9dp"
+        android:paddingBottom="9dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="62dp"
+            android:layout_height="62dp"
+            android:layout_gravity="top"
+            android:layout_marginLeft="12dp"
+            android:scaleType="center"
+            android:id="@+id/avatarView"
+            android:background="@drawable/bubble_avatar"
+            app:MvxBind="DrawableName AssetName; BackgroundBubble ColorHex"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:layout_marginRight="9dp"
+            android:layout_marginLeft="9dp">
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/text_title"
+                android:textColor="@color/black_text_color"
+                app:MvxBind="Text Name" 
+                android:textSize="21sp"/> 
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>
+    
+

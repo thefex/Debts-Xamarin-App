@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/gray_background"
+    android:layout_height="match_parent">
+    <LinearLayout android:layout_width="0px" android:layout_height="0px" android:focusable="true"
+        android:focusableInTouchMode="true"/> 
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" 
+        android:layout_marginBottom="72dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical">
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_marginBottom="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/gray_background"
+            app:tabBackground="@drawable/tab_indicator_selector"
+            app:tabGravity="center"
+            app:tabIndicatorHeight="0dp" />
+        <Button
+            android:id="@+id/startButton"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="100dp"
+            android:theme="@style/ButtonTheme"
+            android:background="@drawable/button_primary"
+            app:MvxLang="Text Start"
+            android:stateListAnimator="@null"
+            app:MvxBind="Click SignIn" />    
+    </LinearLayout>
+    
+</FrameLayout>

@@ -1,0 +1,106 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout" 
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="48dp"
+    android:background="@color/gray_background"
+    app:MvxBind="IsLoading IsListLoaded, Converter=BooleanNegation">
+
+ 
+        <ProgressBar
+            android:alpha="1"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            android:indeterminateTintMode="src_in"
+            android:layout_marginTop="-48dp"
+            android:indeterminateTint="@color/accent"
+            android:tag="@string/progressViewTag"
+            android:id="@+id/ProgressBar"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0" 
+            android:tag="@string/notProgressViewTag">
+ 
+                <mvvmcross.advancedrecyclerview.MvxAdvancedExpandableRecyclerView
+                    android:id="@+id/RecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:MvxHeaderLayoutId="@layout/pick_contacts_list_header"
+                    app:MvxFooterLayoutId="@layout/contact_list_footer"
+                    android:paddingBottom="72dp"
+                    android:clipToPadding="false"
+                    app:MvxGroupSwipeableTemplate="@string/contacts_swipeable_group_template"
+                    app:MvxChildSwipeableTemplate="@string/contacts_swipeable_child_template"
+                    app:MvxGroupedDataConverter="@string/contact_list_grouped_data_converted"
+                    app:MvxGroupExpandController="@string/no_expand_group_controller"
+                    app:MvxTemplateSelector="@string/main_contacts_list_template_selector"
+                    app:MvxBind="ItemsSource Items; ChildItemClick ChildItemTapped"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:alpha="0"
+                    android:layout_marginTop="-48dp"
+                    app:MvxBind="ViewVisibility HasAnyItems, Converter=BooleanNegation">
+
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:id="@+id/animation_view"
+                            android:layout_width="wrap_content"
+                            android:layout_height="240dp"
+                            android:layout_gravity="center"
+                            app:lottie_fileName="sad_bear_empty_list.json"
+                            app:lottie_loop="true"
+                            app:lottie_autoPlay="true" />
+                        <TextView
+                            android:id="@+id/empty_list_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="19sp"
+                            android:textColor="#808080"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginLeft="24dp"
+                            android:layout_marginRight="24dp"
+                            android:gravity="center"
+                            app:MvxLang="Text EmptyListText" />
+                        <Button
+                            android:id="@+id/importContacts"
+                            android:layout_gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:paddingLeft="24dp"
+                            android:paddingRight="24dp"
+                            android:theme="@style/ButtonTheme"
+                            android:background="@drawable/button_primary"
+                            app:MvxLang="Text ImportContacts"
+                            android:stateListAnimator="@null"
+                            app:MvxBind="Click ImportContacts" />
+                </LinearLayout> 
+        </FrameLayout>
+
+        <android.support.design.bottomappbar.BottomAppBar
+            android:theme="@style/Widget.MaterialComponents.BottomAppBar"
+            android:id="@+id/pick_contacts_bottomAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:backgroundTint="@color/primary"
+            android:layout_gravity="bottom"
+            app:buttonGravity="top"
+            app:hideOnScroll="true"
+            app:fabAlignmentMode="center"
+            android:layout_marginBottom="48dp"
+            app:layout_scrollFlags="scroll|enterAlways" />
+        <View android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_gravity="bottom"
+                android:background="@color/primary"/>
+</FrameLayout>

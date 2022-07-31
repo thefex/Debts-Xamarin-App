@@ -1,0 +1,74 @@
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/root_view">
+
+    <!--
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/underSwipe"
+        android:background="@android:color/transparent"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"> 
+        
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:id="@+id/delete_image_view"
+            android:src="@drawable/delete"/>
+    </RelativeLayout>
+    -->
+    
+    
+    <LinearLayout
+        android:id="@+id/container_of_list_item"
+        android:layout_width="match_parent" 
+        android:layout_height="wrap_content"
+        android:paddingTop="9dp"
+        android:paddingBottom="9dp"
+        android:background="@drawable/bg_item_list_tapped"
+        android:orientation="horizontal">
+
+        <com.debts.AvatarView
+            android:layout_width="62dp"
+            android:layout_height="62dp"
+            android:layout_gravity="top"
+            android:layout_marginLeft="12dp"
+            android:id="@+id/avatarView"
+            android:background="@drawable/bubble_avatar"
+            app:MvxBind="Initials Item, Converter=NameToInitials; ImagePath Item.AvatarUrl" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="9dp"
+            android:layout_marginLeft="12dp">
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/text_title"
+                android:layout_gravity="center_vertical|left"
+                android:textColor="@color/black_text_color"
+                app:MvxBind="Text Item.FirstName + ' ' + Item.LastName" 
+                android:textSize="17sp" />
+        </LinearLayout> 
+        
+        <CheckBox android:layout_marginRight="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" 
+            style="@style/CheckBoxStyle"
+            app:MvxBind="Checked IsSelected; Visibility IsSelectionEnabled, Converter=BooleanToVisibility"/>
+        
+    </LinearLayout>
+</FrameLayout>
+    
+

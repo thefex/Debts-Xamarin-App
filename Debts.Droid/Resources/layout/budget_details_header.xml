@@ -1,0 +1,226 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" 
+    android:id="@+id/root_view"
+    android:background="@color/gray_background"
+    android:orientation="vertical">
+ 
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="12dp"
+        android:padding="16dp"
+        android:background="@android:color/white">
+        <TextView android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:MvxLang="Text General"
+            android:textColor="#404040"
+            android:textSize="21sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:paddingTop="9dp"
+            android:paddingBottom="9dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_gravity="top"
+                android:scaleType="center"
+                android:id="@+id/avatarView"
+                android:background="@drawable/bubble_avatar"
+                app:MvxBind="DrawableName Item.Category.AssetName; BackgroundBubble Item.Category.ColorHex"/>
+            
+            <TextView android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="9dp"
+                android:layout_gravity="center_vertical"
+                android:textColor="#404040"
+                android:textSize="21sp"
+                android:clickable="true" 
+                app:MvxBind="Text Item.Category.Name"/>
+
+            <TextView android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:padding="12dp"
+                android:gravity="center"
+                android:textSize="17sp"
+                android:textColor="@android:color/white"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:layout_marginRight="12dp"
+                android:background="@drawable/bubble_star"
+                android:text="5" />
+        </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp">
+            <FrameLayout
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:background="@drawable/circle_blue">
+                <ImageView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:tint="@color/primary"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_note_text_white_24dp"/>
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="12dp">
+
+                <TextView android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:MvxLang="Text Title"
+                    android:textColor="#404040"
+                    android:textSize="21sp"/>
+
+                <TextView android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/text_title"
+                    android:text="Title of Finance Operation"
+                    android:textColor="#808080"
+                    app:MvxBind="Text Item.Title"
+                    android:textSize="17sp"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp">
+            <FrameLayout
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:background="@drawable/circle_accent">
+                <ImageView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:tint="@color/primary_dark"
+                    android:layout_gravity="center"
+                    android:src="@drawable/cash"/>
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginLeft="12dp">
+
+                <TextView android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:MvxLang="Text Price"
+                    android:textColor="#404040"
+                    android:textSize="21sp"/>
+
+                <TextView android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/text_title"
+                    android:text="$1250"
+                    android:textColor="#808080"
+                    app:MvxBind="Text Item.FormattedAmount"
+                    android:textSize="17sp"/>
+            </LinearLayout>
+             
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp">
+            <FrameLayout
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:background="@drawable/circle_blue">
+                <ImageView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:tint="@color/primary"
+                    android:layout_gravity="center"
+                    android:src="@drawable/cash"/>
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="12dp">
+
+                <TextView android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:MvxLang="Text OperationType"
+                    android:textColor="#404040"
+                    android:textSize="21sp"/>
+
+                <TextView android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Debt"
+                    android:textColor="#808080"
+                    android:textSize="17sp"
+                    app:MvxBind="Text Item.Type"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp">
+            <FrameLayout
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/circle_yellow">
+                <ImageView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:tint="@android:color/holo_orange_dark"
+                    android:layout_gravity="center"
+                    android:src="@drawable/calendar"/>
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="12dp">
+
+                <TextView android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:MvxLang="Text CreatedDate"
+                    android:textColor="#404040"
+                    android:textSize="21sp"/>
+
+                <TextView android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="August 14, 2019 6:34 PM"
+                    android:textColor="#808080"
+                    app:MvxBind="Text Item.CreatedAt, Converter=DateToText"
+                    android:textSize="17sp"/>
+                <TextView android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="14 days ago"
+                    app:MvxBind="Text Item.CreatedAt, Converter=HumanizedDate"
+                    android:textColor="#808080"
+                    android:textSize="17sp"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+ 
+</LinearLayout>
+
+ 
+

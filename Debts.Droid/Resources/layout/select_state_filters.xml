@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/bottom_sheet_navigation"
+    app:layout_behavior="android.support.design.widget.BottomSheetBehavior">
+    <LinearLayout android:id="@+id/fragment_history_menu_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#ffffff">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_margin="12dp"
+            android:layout_marginTop="24dp"
+            android:textSize="18sp"
+            android:text="Filter by type"/> 
+         
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="12dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
+            android:clickable="true"
+            android:background="@drawable/white_background_with_top_and_bottom_edges">
+            <TextView
+                
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:singleLine="true"
+                android:textSize="15sp"
+                android:text="Show operations with deadline exceed"
+                android:ellipsize="marquee"/>
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:MvxBind="Checked IsPaymentDeadlineExceedEnabled"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="12dp"
+            android:layout_marginTop="16dp"
+            android:clickable="true"
+            android:background="@drawable/white_background_with_top_and_bottom_edges">
+            <TextView
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:singleLine="true"
+                android:textSize="15sp"
+                android:text="Show active operations"
+                android:ellipsize="marquee"/>
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:MvxBind="Checked IsActivePaymentEnabled"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="12dp"
+            android:clickable="true"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/white_background_with_top_and_bottom_edges">
+            <TextView
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:singleLine="true"
+                android:textSize="15sp"
+                android:text="Show paid-off operations"
+                android:ellipsize="marquee"/>
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:MvxBind="Checked IsPaidOffPaymentEnabled"/>
+        </LinearLayout>
+        
+        <Button
+            android:id="@+id/save_translation_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:paddingTop="2.5dp"
+            android:paddingLeft="25.5dp"
+            android:paddingRight="25.5dp"
+            android:paddingBottom="2.5dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
+            android:layout_marginRight="12dp"
+            android:gravity="center"
+            android:theme="@style/ButtonTheme"
+            android:background="@drawable/button_primary"
+            android:text="filter" 
+            app:MvxBind="Click Filter"/>
+    </LinearLayout>
+</FrameLayout>

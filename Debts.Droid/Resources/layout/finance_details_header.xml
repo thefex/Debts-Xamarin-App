@@ -1,0 +1,152 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" 
+    android:id="@+id/root_view"
+    android:background="@color/gray_background"
+    android:orientation="vertical">
+ 
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="12dp"
+        android:padding="16dp"
+        android:background="@android:color/white">
+        <TextView android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:MvxLang="Text General"
+            android:textColor="#404040"
+            android:textSize="21sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:paddingTop="9dp"
+            android:paddingBottom="9dp"
+            android:orientation="horizontal">
+
+            <com.debts.AvatarView
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_gravity="top"
+                android:id="@+id/avatarView"
+                android:background="@drawable/bubble_avatar"
+                android:clickable="true"
+                app:MvxBind="Initials Details.RelatedTo, Converter=NameToInitials; ImagePath Details.RelatedTo.AvatarUrl; Click TransferToContact"  />
+
+            <TextView android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="9dp"
+                android:layout_gravity="center_vertical"
+                android:textColor="#404040"
+                android:textSize="21sp"
+                android:clickable="true"
+                android:text="Mike Tyson"
+                app:MvxBind="Text Details.RelatedTo; Click TransferToContact"/>
+
+            <TextView android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:padding="12dp"
+                android:gravity="center"
+                android:textSize="17sp"
+                android:textColor="@android:color/white"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:layout_marginRight="12dp"
+                android:background="@drawable/bubble_star"
+                android:text="5" />
+        </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp">
+            <FrameLayout
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:background="@drawable/circle_blue">
+                <ImageView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:tint="@color/primary"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_note_text_white_24dp"/>
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="12dp">
+
+                <TextView android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:MvxLang="Text Title"
+                    android:textColor="#404040"
+                    android:textSize="21sp"/>
+
+                <TextView android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/text_title"
+                    android:text="Title of Finance Operation"
+                    android:textColor="#808080"
+                    app:MvxBind="Text Details.Title"
+                    android:textSize="17sp"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp">
+            <FrameLayout
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:background="@drawable/circle_accent">
+                <ImageView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:tint="@color/primary_dark"
+                    android:layout_gravity="center"
+                    android:src="@drawable/cash"/>
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginLeft="12dp">
+
+                <TextView android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:MvxLang="Text Price"
+                    android:textColor="#404040"
+                    android:textSize="21sp"/>
+
+                <TextView android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/text_title"
+                    android:text="$1250"
+                    android:textColor="#808080"
+                    app:MvxBind="Text '$' + Details.PaymentDetails.Amount + ' (' + Details.PaymentDetails.Currency + ')'"
+                    android:textSize="17sp"/>
+            </LinearLayout>
+            
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/finance_success"
+                android:layout_gravity="center"
+                app:MvxBind="DrawableName Details.PaymentDetails, Converter=PaymentDateToDrawableName"
+                android:layout_marginRight="12dp"/>
+        </LinearLayout>
+    </LinearLayout>
+ 
+</LinearLayout>
+
+ 
+

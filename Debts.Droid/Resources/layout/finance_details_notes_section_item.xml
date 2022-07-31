@@ -1,0 +1,55 @@
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/gray_background">
+    <LinearLayout
+        android:id="@+id/container_of_list_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:paddingLeft="9dp"
+        android:paddingRight="9dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:orientation="vertical">
+
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                app:MvxBind="Text CreatedAt, Converter=HumanizedDateFull"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="12sp"
+                android:layout_gravity="center"
+                android:textColor="#808080"/>
+            <TextView
+                app:MvxBind="Text Duration, Converter=DurationForNote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="#808080"
+                android:layout_gravity="center"
+                android:layout_marginRight="6dp"/>
+            <ImageView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/phone_log"
+                app:MvxBind="DrawableName Type, Converter=NoteTypeToDrawableName"/>
+        </LinearLayout >
+
+        
+        <TextView
+            app:MvxBind="Text Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp"
+            android:textSize="14sp"
+            android:textColor="#404040"/>
+    </LinearLayout>
+</FrameLayout>
+

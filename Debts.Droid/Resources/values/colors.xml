@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#570aeb</color>
+    <color name="primary_dark">#0000b7</color>
+    <color name="primary_light">#BBDEFB</color>
+    <color name="accent">#FF4081</color>
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#757575</color>
+    <color name="icons">#FFFFFF</color>
+    <color name="divider">#B6B6B6</color>
+    
+    <color name="statusBarColor">#f2f2f2</color>
+    <color name="pink_primary">#E60094</color>
+    
+    <color name="onboard_circle_selected_color">#7ccfc9</color>
+    <color name="onboard_circle_default_color">#b9bec7</color>
+    
+    <color name="black_text_color">#1E1E1E</color>
+
+    <color name="debt_bubble_color">#DC143C</color>
+    <color name="loan_bubble_color">#4422EE</color>
+    <color name="avatar_color">#a4a4a4</color>
+    
+    <color name="success_green_color">#32CD32</color>
+    
+    <color name="gray_background">#F0F0F0</color>
+    <color name="gray_background_darker">#d8d8d8</color>
+    
+    <color name="ic_launcher_background">#e04f5f</color>
+    
+    <color name="green_swipe_color">#12a360</color>
+    <color name="blue_swipe_color">#21a9e2</color>
+</resources>

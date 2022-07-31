@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/image_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginRight="36dp"
+        app:srcCompat="@drawable/add_operation_01" />
+
+    <TextView
+        android:id="@+id/title_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:textSize="24dp"
+        android:text="Track Your Budget"/>
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginTop="12dp"
+        android:textSize="16sp"
+        android:text="Type your new expense/income title and select it's type so you can find it quickly in future!"
+        android:gravity="center" />
+    
+    <FrameLayout android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/editTextFlowBackground"
+            android:elevation="2dp"
+            android:translationZ="1dp"
+            android:orientation="vertical"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginTop="12dp"
+            android:layout_gravity="center">
+
+            <mvvmcross.platforms.android.binding.views.MvxSpinner
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:textSize="18dip"
+                android:backgroundTint="#E0E0E0"
+                app:backgroundTint="#E0E0E0"
+                app:MvxDropDownItemTemplate="@layout/default_spinner_item_template"
+                app:MvxItemTemplate="@layout/default_spinner_header_item_template"
+                android:autoText="false"
+                android:textColor="#878787"
+                android:paddingRight="12dp"
+                app:MvxBind="ItemsSource AvailableTypes; SelectedItem Type" />
+            
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/white"/>
+            
+            <EditText android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:paddingLeft="12dp"
+                android:textSize="17sp"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical|left"
+                android:id="@+id/title_edit_text" 
+                android:maxLines="1"
+                android:inputType="text"
+                android:lines="1" 
+                android:imeOptions="actionDone"
+                android:background="@null"
+                android:hint="Enter title"
+                app:MvxBind="Text Title"/>
+           
+        </LinearLayout>
+    </FrameLayout>
+  
+    
+</LinearLayout>

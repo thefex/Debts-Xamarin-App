@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Debts</string>
+    
+    <string name="finances_list_template_selector">Debts.Droid.Core.TemplateSelectors.FinancesTemplateSelector, Debts.Droid</string>
+    <string name="finances_grouping_provider">Debts.Droid.Core.Grouping.FinanceOperationGroupingDataConverter, Debts.Droid</string>
+    <string name="no_expand_group_controller">Debts.Droid.Core.Grouping.NoExpandGroupController, Debts.Droid</string>
+    <string name="finances_swipeable_child_template">Debts.Droid.Core.Swipe.FinanceOperationChildSwipeableTemplate, Debts.Droid</string>
+    <string name="finances_swipeable_group_template">Debts.Droid.Core.Swipe.FinanceOperationGroupSwipeableTemplate, Debts.Droid</string>
+
+    <string name="budget_category_list_template_selector">Debts.Droid.Core.TemplateSelectors.PickBudgetCategoryTemplateSelector, Debts.Droid</string>
+    <string name="budget_category_unique_id_provider">Debts.Droid.Core.BudgetCategoryItemUniqueIdProvider, Debts.Droid</string>
+
+
+    <string name="budget_list_template_selector">Debts.Droid.Core.TemplateSelectors.BudgetTemplateSelector, Debts.Droid</string>
+    <string name="budget_grouping_provider">Debts.Droid.Core.Grouping.BudgetGroupingDataConverter, Debts.Droid</string>
+    <string name="budget_swipeable_child_template">Debts.Droid.Core.Swipe.BudgetChildSwipeableTemplate, Debts.Droid</string>
+    <string name="budget_swipeable_group_template">Debts.Droid.Core.Swipe.BudgetGroupSwipeableTemplate, Debts.Droid</string>
+    
+    <string name="budget_details_template_selector">Debts.Droid.Core.TemplateSelectors.BudgetDetailsTemplateSelector, Debts.Droid</string>
+    
+    <string name="contacts_swipeable_group_template">Debts.Droid.Core.Swipe.ContactGroupSwipeableTemplate, Debts.Droid</string>
+    <string name="contacts_swipeable_child_template">Debts.Droid.Core.Swipe.ContactOperationChildSwipeableTemplate, Debts.Droid</string>
+    
+    <string name="finance_details_grouped_data_converter">Debts.Droid.Core.Grouping.FinanceOperationDetailsGroupingDataConverter, Debts.Droid</string>
+    <string name="finance_details_template_selector">Debts.Droid.Core.TemplateSelectors.FinanceDetailsTemplateSelector, Debts.Droid</string>
+    
+    <string name="contacts_list_template_selector">Debts.Droid.Core.TemplateSelectors.ContactsTemplateSelector, Debts.Droid</string>
+    <string name="main_contacts_list_template_selector">Debts.Droid.Core.TemplateSelectors.MainContactsTemplateSelector, Debts.Droid</string>
+    <string name="contact_list_grouped_data_converted">Debts.Droid.Core.Grouping.ContactListGroupingDataConverter, Debts.Droid</string>
+    <string name="contact_details_template_selector">Debts.Droid.Core.TemplateSelectors.ContactDetailsTemplateSelector, Debts.Droid</string>
+    <string name="contact_details_grouped_data_converter">Debts.Droid.Core.Grouping.ContactDetailsGroupingDataConverter, Debts.Droid</string>
+
+    <string name="statistics_template_selector">Debts.Droid.Core.TemplateSelectors.StatisticsTemplateSelector, Debts.Droid</string>
+    <string name="statistics_grouped_data_converter">Debts.Droid.Core.Grouping.StatisticsGroupingDataConverter, Debts.Droid</string>
+        
+    <string name="notProgressViewTag">notProgressViewTag</string>
+    <string name="progressViewTag">progressViewTag</string>
+    
+    <!-- config -->
+    <string name="admob_application_id">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="admob_ad_list_header">ca-app-pub-3940256099942544/6300978111</string> 
+    
+</resources>

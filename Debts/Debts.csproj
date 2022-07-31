@@ -1,0 +1,81 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <Configurations>Debug;Release</Configurations>
+        <Platforms>AnyCPU;iPhoneSimulator;iPhone Simulator</Platforms>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="DynamicData" Version="6.12.5" />
+      <PackageReference Include="Fody" Version="5.1.1" />
+      <PackageReference Include="Humanizer" Version="2.7.9" />
+      <PackageReference Include="Humanizer.Core" Version="2.7.9" />
+      <PackageReference Include="Microsoft.AppCenter.Crashes" Version="2.6.4" />
+      <PackageReference Include="MvvmCross" Version="6.3.1" />
+      <PackageReference Include="MvvmCross.Plugin.Location" Version="6.3.1" />
+      <PackageReference Include="MvvmCross.Plugin.Messenger" Version="6.2.3" />
+      <PackageReference Include="MvvmCross.Plugin.PictureChooser" Version="6.3.1" />
+      <PackageReference Include="MvvmCross.Plugin.ResxLocalization" Version="6.3.1" />
+      <PackageReference Include="MvvmCross.Plugin.Visibility" Version="6.3.1" />
+      <PackageReference Include="Plugin.Permissions" Version="3.0.0.12" />
+      <PackageReference Include="Portable.Ninject" Version="3.3.1" />
+      <PackageReference Include="PropertyChanged.Fody" Version="3.0.1" />
+      <PackageReference Include="sqlite-net-pcl" Version="1.5.231" />
+      <PackageReference Include="SQLiteNetExtensions" Version="2.1.0" />
+      <PackageReference Include="SQLiteNetExtensions.Async" Version="2.1.0" />
+      <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.4.11.982" />
+      <PackageReference Include="Xamarin.Essentials" Version="1.3.0" />
+      <PackageReference Include="Humanizer.Core.fr" Version="2.7.9" />
+      <PackageReference Include="Humanizer.Core.bg" Version="2.7.9" />
+      <PackageReference Include="Humanizer.Core.af" Version="2.7.9" />
+      <PackageReference Include="Humanizer.Core.es" Version="2.7.9" />
+      <PackageReference Include="Humanizer.Core.hr" Version="2.7.9" />
+      <PackageReference Include="Humanizer.Core.de" Version="2.7.9" />
+      <PackageReference Include="Humanizer.Core.zh-Hans" Version="2.7.9" />
+      <PackageReference Include="Humanizer.Core.he" Version="2.7.9" />
+      <PackageReference Include="Humanizer.Core.sr" Version="2.7.9" />
+      <PackageReference Include="Humanizer.Core.sl" Version="2.7.9" />
+      <PackageReference Include="Humanizer.Core.el" Version="2.7.9" />
+      <PackageReference Include="Humanizer.Core.fa" Version="2.7.9" />
+      <PackageReference Include="Humanizer.Core.sk" Version="2.7.9" />
+      <PackageReference Include="Humanizer.Core.id" Version="2.7.9" />
+      <PackageReference Include="Humanizer.Core.ar" Version="2.7.9" />
+      <PackageReference Include="Humanizer.Core.hu" Version="2.7.9" />
+      <PackageReference Include="Humanizer.Core.pt" Version="2.7.9" />
+      <PackageReference Include="Humanizer.Core.sv" Version="2.7.9" />
+      <PackageReference Include="Humanizer.Core.pl" Version="2.7.9" />
+      <PackageReference Include="Humanizer.Core.da" Version="2.7.9" />
+      <PackageReference Include="Humanizer.Core.ro" Version="2.7.9" />
+      <PackageReference Include="Humanizer.Core.tr" Version="2.7.9" />
+      <PackageReference Include="Humanizer.Core.cs" Version="2.7.9" />
+      <PackageReference Include="Humanizer.Core.bn-BD" Version="2.7.9" />
+      <PackageReference Include="Humanizer.Core.uk" Version="2.7.9" />
+      <PackageReference Include="Humanizer.Core.it" Version="2.7.9" />
+      <PackageReference Include="Humanizer.Core.vi" Version="2.7.9" />
+      <PackageReference Include="Humanizer.Core.zh-Hant" Version="2.7.9" />
+      <PackageReference Include="Humanizer.Core.sr-Latn" Version="2.7.9" />
+      <PackageReference Include="Humanizer.Core.fr-BE" Version="2.7.9" />
+      <PackageReference Include="Humanizer.Core.nl" Version="2.7.9" />
+      <PackageReference Include="Humanizer.Core.zh-CN" Version="2.7.9" />
+      <PackageReference Include="Humanizer.Core.ja" Version="2.7.9" />
+      <PackageReference Include="Humanizer.Core.nb" Version="2.7.9" />
+      <PackageReference Include="Humanizer.Core.nb-NO" Version="2.7.9" />
+      <PackageReference Include="Humanizer.Core.ru" Version="2.7.9" />
+      <PackageReference Include="Humanizer.Core.fi-FI" Version="2.7.9" />
+      <PackageReference Include="Humanizer.Core.lv" Version="2.7.9" />
+      <PackageReference Include="Humanizer.Core.uz-Latn-UZ" Version="2.7.9" />
+      <PackageReference Include="Humanizer.Core.uz-Cyrl-UZ" Version="2.7.9" />
+      <PackageReference Include="Humanizer.Core.mt" Version="2.7.9" />
+      <PackageReference Include="Humanizer.Core.ms-MY" Version="2.7.9" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Services\Exceptions\Handlers" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Debts.Data\Debts.Data.csproj" />
+    </ItemGroup>
+
+</Project>

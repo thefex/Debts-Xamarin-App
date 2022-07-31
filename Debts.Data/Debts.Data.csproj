@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <Configurations>Debug;Release</Configurations>
+        <Platforms>AnyCPU;iPhoneSimulator;iPhone Simulator</Platforms>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="sqlite-net-pcl" Version="1.5.231" />
+      <PackageReference Include="SQLiteNetExtensions" Version="2.1.0" />
+      <PackageReference Include="SQLiteNetExtensions.Async" Version="2.1.0" />
+    </ItemGroup>
+
+</Project>

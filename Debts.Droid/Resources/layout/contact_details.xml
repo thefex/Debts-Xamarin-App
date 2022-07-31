@@ -1,0 +1,41 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="6dp"
+    android:paddingBottom="6dp"
+    android:id="@+id/root_view"
+    android:background="@color/gray_background"
+    android:orientation="vertical">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/id_appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:background="@android:color/transparent"
+        app:elevation="0dp">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/id_toolbar"
+            android:layout_width="match_parent"
+            android:layout_gravity="right|top"
+            android:background="@android:color/transparent"
+            app:theme="@style/ThemeOverlay.AppCompat.Light"
+            android:layout_height="?attr/actionBarSize" />
+    </android.support.design.widget.AppBarLayout>
+
+    <mvvmcross.advancedrecyclerview.MvxAdvancedExpandableRecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:MvxHeaderLayoutId="@layout/contact_details_header"
+        app:MvxFooterLayoutId="@layout/contact_details_footer"
+        app:MvxGroupedDataConverter="@string/contact_details_grouped_data_converter"
+        app:MvxGroupExpandController="@string/AccordionMvxGroupExpandController"
+        app:MvxTemplateSelector="@string/contact_details_template_selector"
+        app:MvxBind="ItemsSource Sections; ChildItemClick ChildItemTapped" /> 
+</LinearLayout>
+    
+

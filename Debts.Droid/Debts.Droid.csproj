@@ -1,0 +1,1336 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3963D2BE-33A3-47F3-BB8A-F1A57CF2B338}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Debts.Droid</RootNamespace>
+    <AssemblyName>Debts.Droid</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <AndroidApplication>True</AndroidApplication>
+    <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <AndroidUseAapt2>false</AndroidUseAapt2>
+    <AndroidLinkMode>Full</AndroidLinkMode>
+    <AndroidLinkSkip>Ninject;Debts;Debts.Data;Debts.Droid;MvvmCross;MvvmCross.AdvancedRecyclerView</AndroidLinkSkip>
+    <AndroidSupportedAbis>armeabi-v7a;x86;arm64-v8a;x86_64</AndroidSupportedAbis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>portable</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidUseAapt2>false</AndroidUseAapt2>
+    <AndroidDexTool>d8</AndroidDexTool>
+    <MandroidI18n>cjk;mideast;other;rare;west</MandroidI18n>
+    <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidManagedSymbols>true</AndroidManagedSymbols>
+    <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
+    <AndroidDexTool>d8</AndroidDexTool>
+    <AndroidPackageFormat>aab</AndroidPackageFormat>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Android" />
+    <Reference Include="Mono.Android.Export" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Activities\BaseActivity.cs" />
+    <Compile Include="Activities\BasePickBudgetCategoryActivity.cs" />
+    <Compile Include="Activities\ImportContactsActivity.cs" />
+    <Compile Include="Activities\MainActivity.cs" />
+    <Compile Include="Activities\PickBudgetCategoryActivity.cs" />
+    <Compile Include="Activities\PickBudgetCategoryForFilterActivity.cs" />
+    <Compile Include="Activities\SplashActivity.cs" />
+    <Compile Include="Activities\StartActivity.cs" />
+    <Compile Include="Activities\Transitions\BudgetDetailsTransitionSubViewAction.cs" />
+    <Compile Include="Activities\Transitions\BudgetListTransitionSubViewAction.cs" />
+    <Compile Include="Activities\Transitions\ContactDetailsTransitionSubViewAction.cs" />
+    <Compile Include="Activities\Transitions\ContactListTransitionSubViewAction.cs" />
+    <Compile Include="Activities\Transitions\DefaultTransitionSubViewAction.cs" />
+    <Compile Include="Activities\Transitions\FinanceDetailsTransitionSubViewAction.cs" />
+    <Compile Include="Activities\Transitions\FinanceListTransitionSubViewAction.cs" />
+    <Compile Include="Activities\Transitions\ITransitionSubViewAction.cs" />
+    <Compile Include="Activities\Transitions\StatisticsTransitionSubViewAction.cs" />
+    <Compile Include="Activities\Transitions\SubViewTransitionInvoker.cs" />
+    <Compile Include="Config\AndroidAppConstants.cs" />
+    <Compile Include="Config\Bindings\MvxCustomItemLoadingBinding.cs" />
+    <Compile Include="Config\Bindings\MvxViewBackgroundDrawableIdBinding.cs" />
+    <Compile Include="Config\Bindings\MvxViewBackgroundWithChangedColorBinding.cs" />
+    <Compile Include="Config\Bindings\VisibilityFadeInOutAndroidBinding.cs" />
+    <Compile Include="Config\Calligraphy\CalligraphyMvxAndroidViewBinder.cs" />
+    <Compile Include="Config\Calligraphy\CalligraphyMvxAndroidViewFactory.cs" />
+    <Compile Include="Config\Calligraphy\CalligraphyMvxAndroidBindingBuilder.cs" />
+    <Compile Include="Config\AppMvxViewModelLocator.cs" />
+    <Compile Include="Config\LinkerPleaseInclude.cs" />
+    <Compile Include="Config\Modules\DroidNinjectModulesProvider.cs" />
+    <Compile Include="Config\Modules\PlatformNinjectModule.cs" />
+    <Compile Include="Config\MvxAppPresenter.cs" />
+    <Compile Include="Config\Presenter\AddDialogFragmentSubPresenter.cs" />
+    <Compile Include="Config\Presenter\AddFinanceDetailsNoteSubPresenter.cs" />
+    <Compile Include="Config\Presenter\EmptyFragmentAnimationSubPresenter.cs" />
+    <Compile Include="Config\Presenter\FilterByBudgetCategorySubPresenter.cs" />
+    <Compile Include="Config\Presenter\FilterByBudgetDateSubPresenter.cs" />
+    <Compile Include="Config\Presenter\FilterByFinancesDateSubPresenter.cs" />
+    <Compile Include="Config\Presenter\FilterByFinancesStateSubPresenter.cs" />
+    <Compile Include="Config\Presenter\FilterStatisticsByDateSubPresenter.cs" />
+    <Compile Include="Config\Presenter\MvxSubPresenter.cs" />
+    <Compile Include="Config\ViewModelResolver\FilterBudgetByCategoryViewModelResolver.cs" />
+    <Compile Include="Config\ViewModelResolver\FilterBudgetByDateViewModelResolver.cs" />
+    <Compile Include="Config\ViewModelResolver\FilterFinancesByDateViewModelResolver.cs" />
+    <Compile Include="Config\ViewModelResolver\FilterFinancesByStateViewModelResolver.cs" />
+    <Compile Include="Config\ViewModelResolver\FilterStatisticsByDateViewModelResolver.cs" />
+    <Compile Include="Config\ViewModelResolver\MvxCustomViewModelResolver.cs" />
+    <Compile Include="Config\ViewModelResolver\MvxCustomViewModelResolverContainer.cs" />
+    <Compile Include="Core\BudgetCategoryItemUniqueIdProvider.cs" />
+    <Compile Include="Core\Converters\BooleanToVisibilityValueConverter.cs" />
+    <Compile Include="Core\Converters\BudgetItemToBackgroundDrawableIdValueConverter.cs" />
+    <Compile Include="Core\Converters\FinanceOperationBubbleValueConverter.cs" />
+    <Compile Include="Core\Converters\FinancesMvxGroupedDataToKeyValueConverter.cs" />
+    <Compile Include="Core\Converters\InitialsDarkColorProviderValueConverter.cs" />
+    <Compile Include="Core\Converters\NegatedBooleanToVisibilityValueConverter.cs" />
+    <Compile Include="Core\Converters\NoteTypeToDrawableNameValueConverter.cs" />
+    <Compile Include="Core\Converters\PaymentDateToDrawableNameValueConverter.cs" />
+    <Compile Include="Core\Converters\PaymentDetailsToBackgroundDrawableIdValueConverter.cs" />
+    <Compile Include="Core\Converters\PremiumStateToPremiumIconValueConverter.cs" />
+    <Compile Include="Core\Converters\SearchTextValueConverter.cs" />
+    <Compile Include="Core\Extensions\ActivityExtensions.cs" />
+    <Compile Include="Core\Extensions\AdViewExtension.cs" />
+    <Compile Include="Core\Extensions\AndroidExtensions.cs" />
+    <Compile Include="Core\Extensions\BottomAppBarExtensions.cs" />
+    <Compile Include="Core\Extensions\IntentExtensions.cs" />
+    <Compile Include="Core\Extensions\ViewExtensions.cs" />
+    <Compile Include="Core\Extensions\Wrappers\AnimatorActionListenerWrapper.cs" />
+    <Compile Include="Core\Extensions\Wrappers\DismissActionListenerForDialogWrapper.cs" />
+    <Compile Include="Core\Grouping\BudgetGroupingDataConverter.cs" />
+    <Compile Include="Core\Grouping\ContactDetailsGroupingDataConverter.cs" />
+    <Compile Include="Core\Grouping\ContactListGroupingDataConverter.cs" />
+    <Compile Include="Core\Grouping\FinanceOperationDetailsGroupingDataConverter.cs" />
+    <Compile Include="Core\Grouping\FinanceOperationGroupingDataConverter.cs" />
+    <Compile Include="Core\Grouping\NoExpandGroupController.cs" />
+    <Compile Include="Core\Grouping\StatisticsGroupingDataConverter.cs" />
+    <Compile Include="Core\Swipe\BudgetChildSwipeableTemplate.cs" />
+    <Compile Include="Core\Swipe\BudgetGroupSwipeableTemplate.cs" />
+    <Compile Include="Core\Swipe\ContactGroupSwipeableTemplate.cs" />
+    <Compile Include="Core\Swipe\ContactOperationChildSwipeableTemplate.cs" />
+    <Compile Include="Core\Swipe\ContactsSwipeResultActionFactory.cs" />
+    <Compile Include="Core\Swipe\FinanceOperationChildSwipeableTemplate.cs" />
+    <Compile Include="Core\Swipe\FinanceOperationGroupSwipeableTemplate.cs" />
+    <Compile Include="Core\Swipe\SwipeResultActionFactory.cs" />
+    <Compile Include="Core\TemplateSelectors\BudgetDetailsTemplateSelector.cs" />
+    <Compile Include="Core\TemplateSelectors\BudgetTemplateSelector.cs" />
+    <Compile Include="Core\TemplateSelectors\ContactDetailsTemplateSelector.cs" />
+    <Compile Include="Core\TemplateSelectors\ContactsTemplateSelector.cs" />
+    <Compile Include="Core\TemplateSelectors\FinanceDetailsTemplateSelector.cs" />
+    <Compile Include="Core\TemplateSelectors\FinancesTemplateSelector.cs" />
+    <Compile Include="Core\TemplateSelectors\MainContactsTemplateSelector.cs" />
+    <Compile Include="Core\TemplateSelectors\PickBudgetCategoryTemplateSelector.cs" />
+    <Compile Include="Core\TemplateSelectors\StatisticsTemplateSelector.cs" />
+    <Compile Include="Core\ViewControllers\BottomPanelController.cs" />
+    <Compile Include="Core\ViewControllers\CustomSnackController.cs" />
+    <Compile Include="Core\ViewControllers\FinanceOperationDetailsFavAndFabController.cs" />
+    <Compile Include="Core\Views\AvatarView.cs" />
+    <Compile Include="Core\Views\FixedListPreference.cs" />
+    <Compile Include="Fragments\AddBudget\AddBudgetOperationSelectAmount.cs" />
+    <Compile Include="Fragments\AddBudget\AddBudgetSelectCategoryFragment.cs" />
+    <Compile Include="Fragments\AddBudget\AddBudgetSelectTitleTypeFragment.cs" />
+    <Compile Include="Fragments\AddBudget\MvxViewPagerAddBudgetFragmentAdapter.cs" />
+    <Compile Include="Fragments\AddFinance\AddFinanceOperationSelectAmount.cs" />
+    <Compile Include="Fragments\AddFinance\AddFinanceOperationSelectContactFragment.cs" />
+    <Compile Include="Fragments\AddFinance\AddFinanceOperationSelectDeadline.cs" />
+    <Compile Include="Fragments\AddFinance\AddFinanceOperationSelectTitleTypeFragment.cs" />
+    <Compile Include="Fragments\AddFinance\MvxViewPagerAddFinanceOperationFragmentAdapter.cs" />
+    <Compile Include="Fragments\BaseFragment.cs" />
+    <Compile Include="Fragments\BudgetDetailsFragment.cs" />
+    <Compile Include="Fragments\Budget\AddBudgetItemFragment.cs" />
+    <Compile Include="Fragments\Budget\BudgetFragment.cs" />
+    <Compile Include="Fragments\Budget\FilterBudgetByDateFragment.cs" />
+    <Compile Include="Fragments\Budget\FilterBudgetByCategoryFragment.cs" />
+    <Compile Include="Fragments\ContactDetailsFragment.cs" />
+    <Compile Include="Fragments\Contacts\AddContactFragment.cs" />
+    <Compile Include="Fragments\Contacts\ContactListFragment.cs" />
+    <Compile Include="Fragments\Contacts\PickContactFragment.cs" />
+    <Compile Include="Fragments\FinanceDetailsFragment.cs" />
+    <Compile Include="Fragments\Finances\AddFinanceOperationFragment.cs" />
+    <Compile Include="Fragments\Finances\AllFinancesFragment.cs" />
+    <Compile Include="Fragments\Finances\FavoritesFinancesFragment.cs" />
+    <Compile Include="Fragments\Finances\FilterFinancesByDateFragment.cs" />
+    <Compile Include="Fragments\Finances\FilterFinancesByStateFragment.cs" />
+    <Compile Include="Fragments\Finances\FinancesFragment.cs" />
+    <Compile Include="Fragments\Finances\IFinanceListView.cs" />
+    <Compile Include="Fragments\Finances\MyDebtsFragment.cs" />
+    <Compile Include="Fragments\Finances\MyLoansFragment.cs" />
+    <Compile Include="Fragments\Main\GoPremiumFragment.cs" />
+    <Compile Include="Fragments\Main\MainBottomMenuFragment.cs" />
+    <Compile Include="Fragments\Main\RateAppFragment.cs" />
+    <Compile Include="Fragments\Onboard\MvxViewPagerOnboardFragmentAdapter.cs" />
+    <Compile Include="Fragments\Onboard\OnboardFragment.cs" />
+    <Compile Include="Fragments\SettingsFragment.cs" />
+    <Compile Include="Fragments\Statistics\FilterStatisticsByDateFragment.cs" />
+    <Compile Include="Fragments\Statistics\StatisticsFragment.cs" />
+    <Compile Include="Fragments\Stubs\AddFinanceDetailsFragmentStub.cs" />
+    <Compile Include="MainApplication.cs" />
+    <Compile Include="Messenging\Observers\BlockViewOnAsyncLongOperationMessageObserver.cs" />
+    <Compile Include="Messenging\Observers\CheckBoxQuestionDialogMessageObserver.cs" />
+    <Compile Include="Messenging\Observers\DisableRecyclerViewItemTouchOnAsyncLongRunningOperationMessage.cs" />
+    <Compile Include="Messenging\Observers\CustomToastMessageObserver.cs" />
+    <Compile Include="Messenging\Observers\ReplaceViewOnLongOperationMessageObserver.cs" />
+    <Compile Include="Messenging\Observers\MessageDialogMessageObserver.cs" />
+    <Compile Include="Messenging\Observers\QuestionDialogMessageObserver.cs" />
+    <Compile Include="Messenging\Observers\MainToastMessageObserver.cs" />
+    <Compile Include="Resources\Resource.Designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AppGrowth\AdMobAdvertisementService.cs" />
+    <Compile Include="Services\AppGrowth\AndroidRateAppService.cs" />
+    <Compile Include="Services\AppGrowth\AndroidAppRelatedStatisticsService.cs" />
+    <Compile Include="Services\AppGrowth\FirebaseShareLinkBuilderService.cs" />
+    <Compile Include="Services\DroidPlatform.cs" />
+    <Compile Include="Services\Location\Plugin.cs" />
+    <Compile Include="Services\Location\MvxPluginLog.cs" />
+    <Compile Include="Services\Location\MvxAndroidFusedLocationWatcher.cs" />
+    <Compile Include="Services\Location\FusedLocationHandler.cs" />
+    <Compile Include="Services\Notifications\WorkScheduler\AndroidNotificationsWorkScheduler.cs" />
+    <Compile Include="Services\Notifications\WorkScheduler\DroidNotificationCompatBuilder.cs" />
+    <Compile Include="Services\Payments\BillingStateListener.cs" />
+    <Compile Include="Services\Payments\GoogleBillingClient.cs" />
+    <Compile Include="Services\Payments\PurchaseHistoryListener.cs" />
+    <Compile Include="Services\Payments\PurchasesUpdatedListener.cs" />
+    <Compile Include="Services\Payments\SkuDetailsListener.cs" />
+    <Compile Include="Services\PhoneCallDurationReceiver.cs" />
+    <Compile Include="Services\PhoneCallPermission.cs" />
+    <Compile Include="Services\PhoneContactsService.cs" />
+    <Compile Include="Services\Settings\AccountManagerDisplayNameProvider.cs" />
+    <Compile Include="Services\SharedPreferencesStorageService.cs" />
+    <Compile Include="Services\Walkthrough\BudgetWalkthroughService.cs" />
+    <Compile Include="Services\Walkthrough\ContactListWalkthroughService.cs" />
+    <Compile Include="Services\Walkthrough\FinanceDetailsWalkthroughService.cs" />
+    <Compile Include="Services\Walkthrough\ImportContactsWalkthroughService.cs" />
+    <Compile Include="Services\Walkthrough\MainWalkthroughService.cs" />
+    <Compile Include="Services\Walkthrough\StatisticsWalkthroughService.cs" />
+    <Compile Include="Setup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="Properties\AndroidManifest.xml" />
+    <None Include="Assets\AboutAssets.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\ic_calendar_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_coin_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_dots_vertical_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_filter_outline_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_heart_flash_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_import_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_import_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_magnify_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_select_all_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_share_variant_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_undo_variant_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\splash.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_calendar_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_coin_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_dots_vertical_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_filter_outline_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_heart_flash_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_import_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_import_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_magnify_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_select_all_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_share_variant_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_undo_variant_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\splash.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_calendar_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_coin_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_dots_vertical_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_filter_outline_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_heart_flash_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_import_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_import_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_magnify_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_select_all_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_share_variant_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_undo_variant_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\splash.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_calendar_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_coin_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_dots_vertical_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_filter_outline_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_heart_flash_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_import_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_import_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_magnify_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_select_all_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_share_variant_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_undo_variant_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\splash.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_calendar_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_coin_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_dots_vertical_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_filter_outline_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_heart_flash_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_import_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_import_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_magnify_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_select_all_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_share_variant_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_undo_variant_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\splash.png" />
+    <AndroidResource Include="Resources\drawable\accept_import.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\add_operation_01.xml" />
+    <AndroidResource Include="Resources\drawable\add_operation_02.xml" />
+    <AndroidResource Include="Resources\drawable\add_operation_03.xml" />
+    <AndroidResource Include="Resources\drawable\add_operation_04.xml" />
+    <AndroidResource Include="Resources\drawable\add_operation_05.xml" />
+    <AndroidResource Include="Resources\drawable\arrow_left.xml" />
+    <AndroidResource Include="Resources\drawable\bank.xml" />
+    <AndroidResource Include="Resources\drawable\bg_item_list_tapped.xml">
+      <SubType>Designer</SubType>
+      <Generator>
+      </Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\bg_swipe_item_state_swiping_toLeft.xml">
+      <SubType>Designer</SubType>
+      <Generator>
+      </Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\bg_swipe_item_state_swiping_toRight.xml">
+      <SubType>Designer</SubType>
+      <Generator>
+      </Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\bubble_avatar.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\bubble_avatar_small.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\bubble_debt.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\bubble_loan.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\bubble_star.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\budget.xml" />
+    <AndroidResource Include="Resources\drawable\button_primary.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\button_secondary.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\car.xml" />
+    <AndroidResource Include="Resources\drawable\cash.xml" />
+    <AndroidResource Include="Resources\drawable\cash_multiple.xml" />
+    <AndroidResource Include="Resources\drawable\check.xml" />
+    <AndroidResource Include="Resources\drawable\chevron_down.xml" />
+    <AndroidResource Include="Resources\drawable\chevron_up.xml">
+      <SubType>Designer</SubType>
+      <Generator>
+      </Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\circle_accent.xml">
+      <SubType>Designer</SubType>
+      <Generator>
+      </Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\circle_blue.xml" />
+    <AndroidResource Include="Resources\drawable\circle_green.xml">
+      <SubType>Designer</SubType>
+      <Generator>
+      </Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\circle_pink.xml">
+      <SubType>Designer</SubType>
+      <Generator>
+      </Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\circle_red.xml">
+      <SubType>Designer</SubType>
+      <Generator>
+      </Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\circle_yellow.xml">
+      <SubType>Designer</SubType>
+      <Generator>
+      </Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\close.xml" />
+    <AndroidResource Include="Resources\drawable\coin_outline.xml" />
+    <AndroidResource Include="Resources\drawable\contact_bg_swipe_item_state_swiping_toLeft.xml">
+      <SubType>Designer</SubType>
+      <Generator>
+      </Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\credit_card_outline.xml">
+      <SubType>Designer</SubType>
+      <Generator>
+      </Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\crown.xml" />
+    <AndroidResource Include="Resources\drawable\delete.xml" />
+    <AndroidResource Include="Resources\drawable\editTextFlowBackground.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\expenses_regular.xml" />
+    <AndroidResource Include="Resources\drawable\finance_alert.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\finance_neutral.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\finance_success.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\food_fork_drink.xml" />
+    <AndroidResource Include="Resources\drawable\home_city.xml" />
+    <AndroidResource Include="Resources\drawable\human_handsup.xml" />
+    <AndroidResource Include="Resources\drawable\kids.xml" />
+    <AndroidResource Include="Resources\drawable\laptop_mac.xml" />
+    <AndroidResource Include="Resources\drawable\location.xml">
+      <SubType>Designer</SubType>
+      <Generator>
+      </Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\material_v2_snackbar_error_background.xml">
+      <SubType>Designer</SubType>
+      <Generator>
+      </Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\material_v2_snackbar_info_background.xml">
+      <SubType>Designer</SubType>
+      <Generator>
+      </Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\Other.xml" />
+    <AndroidResource Include="Resources\drawable\message_text.xml" />
+    <AndroidResource Include="Resources\drawable\note_text.xml" />
+    <AndroidResource Include="Resources\drawable\party.xml" />
+    <AndroidResource Include="Resources\drawable\phone_log.xml" />
+    <AndroidResource Include="Resources\drawable\pill.xml" />
+    <AndroidResource Include="Resources\drawable\round_text_info.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\round_text_loans.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\round_text_success.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\round_text_warning.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\selectable_item_background_rounded.xml">
+      <SubType>Designer</SubType>
+      <Generator>
+      </Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\share_variant.xml" />
+    <AndroidResource Include="Resources\drawable\shopping.xml" />
+    <AndroidResource Include="Resources\drawable\splash_window_background_drawable.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\star.xml" />
+    <AndroidResource Include="Resources\drawable\star_half.xml" />
+    <AndroidResource Include="Resources\drawable\star_outline.xml" />
+    <AndroidResource Include="Resources\drawable\tab_indicator_default.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\tab_indicator_selected.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\tab_indicator_selector.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\time.xml">
+      <SubType>Designer</SubType>
+      <Generator>
+      </Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\train_car.xml" />
+    <AndroidResource Include="Resources\drawable\white_background_with_top_and_bottom_edges.xml" />
+    <AndroidResource Include="Resources\layout\activity_import_contacts.axml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\activity_main.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\activity_onboard.axml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\activity_pick_budget_category.axml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\add_note_dialog.axml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\AvatarImageView.axml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\bottom_nav_drawer_header.axml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\budget_category_list_item.axml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\budget_details.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\budget_details_header.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\budget_list.axml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\budget_list_footer.axml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\budget_list_group_header.axml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\budget_list_header.axml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\budget_list_expense_item.axml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\budget_list_income_item.axml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\contact_avatar_item_template.axml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\contact_details.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\contact_details_footer.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\contact_details_header.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\contact_group_letter_item_template.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\contact_item_template.axml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\contact_item_template_with_active_operations_count.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\contact_list.axml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\contact_list_footer.axml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\contact_list_header.axml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\default_spinner_item_template.xml">
+      <SubType>Designer</SubType>
+      <Generator>
+      </Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\default_spinner_header_item_template.xml" />
+    <AndroidResource Include="Resources\layout\dialog_checkbox.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\finances_list.axml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\blank_footer.axml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\finances_list_footer.axml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\finances_list_group_header.axml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\finances_list_header.axml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\debt_finance_item.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\finance_details.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\finance_details_footer.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\finance_details_header.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\finance_details_notes_section_header.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\finance_details_notes_section_item.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\fragment_add_budget.axml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\fragment_add_budget_category.axml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\fragment_add_budget_operation_amount.axml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\fragment_add_budget_titletype.axml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\fragment_add_contact.axml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\fragment_add_finance_operation.axml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\fragment_add_finance_operation_amount.axml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\fragment_add_finance_operation_contact.axml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\fragment_add_finance_operation_deadline.axml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\fragment_add_finance_operation_titletype.axml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\fragment_navigation_menu.axml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\fragment_onboard.axml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\fragment_premium.axml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\fragment_premium_selector.axml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\fragment_rate.axml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\import_contacts_header.axml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\loan_finance_item.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\pick_contacts_list_header.axml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\pick_contact_list.axml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\select_category_filter.xml">
+      <SubType>Designer</SubType>
+      <Generator>
+      </Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\select_state_filters.xml">
+      <SubType>Designer</SubType>
+      <Generator>
+      </Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\select_date_range_fragment.xml" />
+    <AndroidResource Include="Resources\layout\statistics.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\statistics_footer.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\statistics_header.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\statistics_section_finance_operation.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\transaction_debt_finance_item.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\transaction_loan_finance_item.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\menu\bottom_nav_drawer_menu.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\menu\budget_details_toolbar.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\menu\budget_menu.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\menu\contact_details.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\menu\contact_details_toolbar.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\menu\contact_list_menu.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\menu\finance_details.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\menu\finance_details_toolbar.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\menu\empty_menu.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\menu\import_contacts_toolbar.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\menu\pick_budget_category_toolbar.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\menu\premium_selector.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\menu\statistics_menu.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\mipmap-anydpi-v26\app_icon.xml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\app_icon.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\app_icon.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\app_icon.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\app_icon.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\app_icon.png" />
+    <AndroidResource Include="Resources\values-sw360dp-v13\values-preference.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\values\colors.xml" />
+    <AndroidResource Include="Resources\values\strings.xml" />
+    <AndroidResource Include="Resources\values\styles.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_delete_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_delete_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_delete_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_delete_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_delete_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_finance_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_finance_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_finance_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_finance_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_finance_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_contacts_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_contacts_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_contacts_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_contacts_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_contacts_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_settings_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_settings_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_settings_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_settings_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_settings_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_currency_usd_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_currency_usd_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_currency_usd_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_currency_usd_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_currency_usd_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_currency_usd_off_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_currency_usd_off_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_currency_usd_off_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_currency_usd_off_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_currency_usd_off_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_sort_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_sort_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_sort_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_sort_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_border_all_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_border_all_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_border_all_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_border_all_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_border_all_grey600_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_sort_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_star_grey600_24dp.png">
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-mdpi\ic_star_grey600_24dp.png">
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_star_grey600_24dp.png">
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_star_grey600_24dp.png">
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_star_grey600_24dp.png">
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-hdpi\ic_star_outline_grey600_24dp.png">
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-mdpi\ic_star_outline_grey600_24dp.png">
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_star_outline_grey600_24dp.png">
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_star_outline_grey600_24dp.png">
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_star_outline_grey600_24dp.png">
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-hdpi\ic_delete_grey600_24dp.png">
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-mdpi\ic_delete_grey600_24dp.png">
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_delete_grey600_24dp.png">
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_delete_grey600_24dp.png">
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_delete_grey600_24dp.png">
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\note_multiple_outline.xml">
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\calendar.xml">
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-hdpi\ic_phone_white_24dp.png">
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-hdpi\ic_message_white_24dp.png">
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-hdpi\ic_share_white_24dp.png">
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-hdpi\ic_note_text_white_24dp.png">
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-mdpi\ic_note_text_white_24dp.png">
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-mdpi\ic_share_white_24dp.png">
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-mdpi\ic_message_white_24dp.png">
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-mdpi\ic_phone_white_24dp.png">
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_phone_white_24dp.png">
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_message_white_24dp.png">
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_share_white_24dp.png">
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_note_text_white_24dp.png">
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_note_text_white_24dp.png">
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_share_white_24dp.png">
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_message_white_24dp.png">
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_phone_white_24dp.png">
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_note_text_white_24dp.png">
+      <SubType>
+      </SubType>
+      <Generator>
+      </Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\xml\settings.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Com.Airbnb.Android.Lottie" Version="2.7.1" />
+    <PackageReference Include="DynamicData" Version="6.12.5" />
+    <PackageReference Include="Fody" Version="5.1.1" />
+    <PackageReference Include="Humanizer" Version="2.7.9" />
+    <PackageReference Include="Humanizer.Core" Version="2.7.9" />
+    <PackageReference Include="Microsoft.AppCenter.Crashes">
+      <Version>2.6.4</Version>
+    </PackageReference>
+    <PackageReference Include="MvvmCross.AdvancedRecyclerView" Version="1.15.4" />
+    <PackageReference Include="MvvmCross.Droid.Support.Design" Version="6.2.3" />
+    <PackageReference Include="MvvmCross.Droid.Support.V7.AppCompat" Version="6.2.3" />
+    <PackageReference Include="MvvmCross.Droid.Support.V7.RecyclerView" Version="6.2.3" />
+    <PackageReference Include="MvvmCross.Plugin.Location">
+      <Version>6.3.1</Version>
+    </PackageReference>
+    <PackageReference Include="MvvmCross.Plugin.Messenger" Version="6.2.3" />
+    <PackageReference Include="MvvmCross.Plugin.PictureChooser" Version="6.3.1" />
+    <PackageReference Include="MvvmCross.Plugin.ResxLocalization">
+      <Version>6.3.1</Version>
+    </PackageReference>
+    <PackageReference Include="MvvmCross.Plugin.Visibility" Version="6.3.1" />
+    <PackageReference Include="Plugin.Permissions" Version="3.0.0.12" />
+    <PackageReference Include="Portable.Ninject" Version="3.3.1" />
+    <PackageReference Include="PropertyChanged.Fody" Version="3.0.1" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.5.231" />
+    <PackageReference Include="Xamarin.Android.Arch.Work.Runtime" Version="1.0.0" />
+    <PackageReference Include="Xamarin.Android.Google.BillingClient">
+      <Version>2.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Android.Support.Constraint.Layout" Version="1.1.2" />
+    <PackageReference Include="Xamarin.Android.Support.Design" Version="28.0.0.1" />
+    <PackageReference Include="Xamarin.Android.Support.Media.Compat" Version="28.0.0.1" />
+    <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="28.0.0.1" />
+    <PackageReference Include="Xamarin.Android.Support.v7.RecyclerView" Version="28.0.0.1" />
+    <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.4.11.982" />
+    <PackageReference Include="MvvmCross">
+      <Version>6.3.1</Version>
+    </PackageReference>
+    <PackageReference Include="MvvmCross.Droid.Support.V7.Preference">
+      <Version>6.3.1</Version>
+    </PackageReference>
+    <PackageReference Include="SQLiteNetExtensions.Async">
+      <Version>2.1.0</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Essentials">
+      <Version>1.3.0</Version>
+    </PackageReference>
+    <PackageReference Include="Humanizer.Core.fr">
+      <Version>2.7.9</Version>
+    </PackageReference>
+    <PackageReference Include="Humanizer.Core.bg">
+      <Version>2.7.9</Version>
+    </PackageReference>
+    <PackageReference Include="Humanizer.Core.af">
+      <Version>2.7.9</Version>
+    </PackageReference>
+    <PackageReference Include="Humanizer.Core.hr">
+      <Version>2.7.9</Version>
+    </PackageReference>
+    <PackageReference Include="Humanizer.Core.de">
+      <Version>2.7.9</Version>
+    </PackageReference>
+    <PackageReference Include="Humanizer.Core.zh-Hans">
+      <Version>2.7.9</Version>
+    </PackageReference>
+    <PackageReference Include="Humanizer.Core.he">
+      <Version>2.7.9</Version>
+    </PackageReference>
+    <PackageReference Include="Humanizer.Core.sr">
+      <Version>2.7.9</Version>
+    </PackageReference>
+    <PackageReference Include="Humanizer.Core.sl">
+      <Version>2.7.9</Version>
+    </PackageReference>
+    <PackageReference Include="Humanizer.Core.el">
+      <Version>2.7.9</Version>
+    </PackageReference>
+    <PackageReference Include="Humanizer.Core.fa">
+      <Version>2.7.9</Version>
+    </PackageReference>
+    <PackageReference Include="Humanizer.Core.es">
+      <Version>2.7.9</Version>
+    </PackageReference>
+    <PackageReference Include="Humanizer.Core.pl">
+      <Version>2.7.9</Version>
+    </PackageReference>
+    <PackageReference Include="Humanizer.Core.uk">
+      <Version>2.7.9</Version>
+    </PackageReference>
+    <PackageReference Include="Humanizer.Core.it">
+      <Version>2.7.9</Version>
+    </PackageReference>
+    <PackageReference Include="Humanizer.Core.sk">
+      <Version>2.7.9</Version>
+    </PackageReference>
+    <PackageReference Include="Humanizer.Core.id">
+      <Version>2.7.9</Version>
+    </PackageReference>
+    <PackageReference Include="Humanizer.Core.hu">
+      <Version>2.7.9</Version>
+    </PackageReference>
+    <PackageReference Include="Humanizer.Core.ar">
+      <Version>2.7.9</Version>
+    </PackageReference>
+    <PackageReference Include="Humanizer.Core.pt">
+      <Version>2.7.9</Version>
+    </PackageReference>
+    <PackageReference Include="Humanizer.Core.nl">
+      <Version>2.7.9</Version>
+    </PackageReference>
+    <PackageReference Include="Humanizer.Core.cs">
+      <Version>2.7.9</Version>
+    </PackageReference>
+    <PackageReference Include="Humanizer.Core.da">
+      <Version>2.7.9</Version>
+    </PackageReference>
+    <PackageReference Include="Humanizer.Core.ro">
+      <Version>2.7.9</Version>
+    </PackageReference>
+    <PackageReference Include="Humanizer.Core.ja">
+      <Version>2.7.9</Version>
+    </PackageReference>
+    <PackageReference Include="Humanizer.Core.tr">
+      <Version>2.7.9</Version>
+    </PackageReference>
+    <PackageReference Include="Humanizer.Core.bn-BD">
+      <Version>2.7.9</Version>
+    </PackageReference>
+    <PackageReference Include="Humanizer.Core.nb-NO">
+      <Version>2.7.9</Version>
+    </PackageReference>
+    <PackageReference Include="Humanizer.Core.fi-FI">
+      <Version>2.7.9</Version>
+    </PackageReference>
+    <PackageReference Include="Humanizer.Core.vi">
+      <Version>2.7.9</Version>
+    </PackageReference>
+    <PackageReference Include="Humanizer.Core.nb">
+      <Version>2.7.9</Version>
+    </PackageReference>
+    <PackageReference Include="Humanizer.Core.ru">
+      <Version>2.7.9</Version>
+    </PackageReference>
+    <PackageReference Include="Humanizer.Core.zh-CN">
+      <Version>2.7.9</Version>
+    </PackageReference>
+    <PackageReference Include="Humanizer.Core.zh-Hant">
+      <Version>2.7.9</Version>
+    </PackageReference>
+    <PackageReference Include="Humanizer.Core.sr-Latn">
+      <Version>2.7.9</Version>
+    </PackageReference>
+    <PackageReference Include="Humanizer.Core.uz-Latn-UZ">
+      <Version>2.7.9</Version>
+    </PackageReference>
+    <PackageReference Include="Humanizer.Core.fr-BE">
+      <Version>2.7.9</Version>
+    </PackageReference>
+    <PackageReference Include="Humanizer.Core.lv">
+      <Version>2.7.9</Version>
+    </PackageReference>
+    <PackageReference Include="Humanizer.Core.uz-Cyrl-UZ">
+      <Version>2.7.9</Version>
+    </PackageReference>
+    <PackageReference Include="Humanizer.Core.mt">
+      <Version>2.7.9</Version>
+    </PackageReference>
+    <PackageReference Include="Humanizer.Core.ms-MY">
+      <Version>2.7.9</Version>
+    </PackageReference>
+    <PackageReference Include="Humanizer.Core.sv">
+      <Version>2.7.9</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Firebase.Dynamic.Links">
+      <Version>71.1615.0</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.GooglePlayServices.Ads.Lite">
+      <Version>71.1720.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.GooglePlayServices.Location">
+      <Version>71.1600.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bindings\SpotLightXamarin\SpotlightXamarin.csproj">
+      <Project>{481bebd1-4af2-4b25-a4b8-49e4605bd572}</Project>
+      <Name>SpotlightXamarin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Debts.Data\Debts.Data.csproj">
+      <Project>{2e967c8a-4835-4a13-92d5-404b5faba5c2}</Project>
+      <Name>Debts.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Debts\Debts.csproj">
+      <Project>{0b0dd8ad-549a-4283-bf18-d55ed5d84a45}</Project>
+      <Name>Debts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MvvmCross.Caligraphy\MvvmCross.Caligraphy.csproj">
+      <Project>{6591f96a-29b7-403e-8986-ef8d077a8fe9}</Project>
+      <Name>MvvmCross.Caligraphy</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ic_app_icon.xml" />
+    <AndroidResource Include="Resources\drawable\ic_launcher_background.xml" />
+    <AndroidResource Include="Resources\drawable\ic_launcher_foreground.xml" />
+    <AndroidResource Include="Resources\layout\SplashLayout.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\05_onboard.json" />
+    <AndroidAsset Include="Assets\premium_bear.json" />
+    <AndroidAsset Include="Assets\star_02.json" />
+    <AndroidAsset Include="Assets\star_01.json" />
+    <AndroidAsset Include="Assets\sad_bear_empty_list.json" />
+    <AndroidAsset Include="Assets\default_empty_list.json" />
+    <AndroidAsset Include="Assets\fonts\roboto_bold.ttf" />
+    <AndroidAsset Include="Assets\fonts\roboto_light.ttf" />
+    <AndroidAsset Include="Assets\fonts\roboto_medium.ttf" />
+    <AndroidAsset Include="Assets\fonts\roboto_regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\01_onboard.json" />
+    <AndroidAsset Include="Assets\02_onboard.json" />
+    <AndroidAsset Include="Assets\03_onboard.json" />
+    <AndroidAsset Include="Assets\04_onboard.json" />
+    <AndroidAsset Include="Assets\06_onboard.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\dimens.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\menu.xml" />
+    <AndroidResource Include="Resources\drawable\plus.xml" />
+    <AndroidResource Include="Resources\menu\finance_list_main_menu.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\ic_magnify_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_magnify_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_magnify_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_magnify_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_magnify_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\color\primaryselector.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+      Other similar extension points exist, see Microsoft.Common.targets.
+      <Target Name="BeforeBuild">
+      </Target>
+      <Target Name="AfterBuild">
+      </Target>
+    -->
+</Project>

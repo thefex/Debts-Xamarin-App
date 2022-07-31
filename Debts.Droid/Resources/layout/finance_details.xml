@@ -1,0 +1,350 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="6dp"
+    android:paddingBottom="6dp"
+    android:id="@+id/root_view"
+    android:background="@color/gray_background"
+    android:orientation="vertical">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/id_appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:background="@android:color/transparent"
+        app:elevation="0dp">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/id_toolbar"
+            android:layout_width="match_parent"
+            android:layout_gravity="right|top"
+            android:background="@android:color/transparent"
+            app:theme="@style/ThemeOverlay.AppCompat.Light"
+            android:layout_height="?attr/actionBarSize" />
+    </android.support.design.widget.AppBarLayout>
+
+    <mvvmcross.advancedrecyclerview.MvxAdvancedExpandableRecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:MvxHeaderLayoutId="@layout/finance_details_header"
+        app:MvxFooterLayoutId="@layout/finance_details_footer"
+        app:MvxGroupedDataConverter="@string/finance_details_grouped_data_converter"
+        app:MvxGroupExpandController="@string/AccordionMvxGroupExpandController"
+        app:MvxTemplateSelector="@string/finance_details_template_selector"
+        app:MvxBind="ItemsSource Sections" />
+<!--
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginLeft="36dp"
+                android:layout_marginRight="36dp"
+                android:layout_marginBottom="6dp"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:id="@+id/text_title"
+                app:MvxBind="Text Details.Title"/>
+
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:background="@drawable/round_text_info"
+                android:textSize="13sp"
+                android:padding="3dp"
+                android:paddingLeft="6dp"
+                android:paddingRight="6dp"
+                android:layout_gravity="center"
+                app:MvxBind="Text Details.PaymentDetails, Converter=AmountWithCurrency"
+                fontPath="fonts/roboto_bold.ttf"/>
+
+            <View android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider"
+                android:alpha="0.5"
+                android:layout_marginTop="12dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:paddingTop="9dp"
+                android:paddingBottom="9dp"
+                android:orientation="horizontal">
+
+                <com.debts.AvatarView
+                    android:layout_width="62dp"
+                    android:layout_height="62dp"
+                    android:layout_gravity="top"
+                    android:layout_marginLeft="12dp"
+                    android:id="@+id/avatarView"
+                    android:background="@drawable/bubble_avatar"
+                    app:MvxBind="Initials Details.RelatedTo, Converter=NameToInitials; ImagePath Details.RelatedTo.AvatarUrl"  />
+
+                <TextView android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="9dp"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="18sp"
+                    app:MvxBind="Text Details.RelatedTo"/>
+
+                <TextView android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:padding="12dp"
+                    android:gravity="center"
+                    android:textSize="17sp"
+                    android:textColor="@android:color/white"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="12dp"
+                    android:background="@drawable/bubble_star"
+                    android:text="5.0" />
+            </LinearLayout>
+
+            <View android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider"
+                android:alpha="0.5"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="12dp"
+                android:paddingTop="9dp"
+                android:paddingRight="12dp"
+                android:paddingBottom="9dp"
+                android:orientation="horizontal">
+                <ImageView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/cash"
+                    android:layout_gravity="center"
+                    android:tint="@color/pink_primary"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:orientation="vertical">
+
+                    <TextView android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Operation type"
+                        android:textSize="17sp"
+                        fontPath="fonts/roboto_medium.ttf"/>
+
+                    <TextView android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Loan"
+                        android:layout_marginTop="3dp"
+                        android:textSize="15sp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider"
+                android:alpha="0.5"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="12dp"
+                android:paddingTop="9dp"
+                android:paddingRight="12dp"
+                android:paddingBottom="9dp"
+                android:orientation="horizontal">
+                <ImageView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/calendar"
+                    android:layout_gravity="center"
+                    android:tint="@color/pink_primary"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:orientation="vertical">
+
+                    <TextView android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Created date"
+                        android:textSize="17sp"
+                        fontPath="fonts/roboto_medium.ttf"/>
+
+                    <TextView android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="05/04/2019 10:30 PM"
+                        android:layout_marginTop="3dp"
+                        android:textSize="15sp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider"
+                android:alpha="0.5" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="12dp"
+                android:paddingTop="9dp"
+                android:paddingRight="12dp"
+                android:paddingBottom="9dp"
+                android:orientation="horizontal">
+                <ImageView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/location"
+                    android:layout_gravity="center"
+                    android:tint="@color/pink_primary"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:orientation="vertical">
+
+                    <TextView android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Created location"
+                        android:textSize="17sp"
+                        fontPath="fonts/roboto_medium.ttf"/>
+
+                    <TextView android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Casa Blanca, 11-200 Spain"
+                        android:layout_marginTop="3dp"
+                        android:textSize="15sp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider"
+                android:alpha="0.5" />
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="12dp"
+                android:paddingTop="9dp"
+                android:paddingRight="12dp"
+                android:paddingBottom="9dp"
+                android:orientation="horizontal">
+                <ImageView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/calendar"
+                    android:tint="@color/pink_primary"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:orientation="vertical">
+
+                    <TextView android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Deadline"
+                        android:textSize="17sp"
+                        fontPath="fonts/roboto_medium.ttf"/>
+
+                    <TextView android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="09/04/2019 10:30 PM (tomorrow)"
+                        android:layout_marginTop="3dp"
+                        android:textSize="15sp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:alpha="0.5"
+                android:background="@color/divider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="12dp"
+                android:paddingTop="9dp"
+                android:paddingRight="12dp"
+                android:paddingBottom="9dp"
+                android:orientation="horizontal">
+                <ImageView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/credit_card_outline"
+                    android:tint="@color/pink_primary"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:orientation="vertical">
+
+                    <TextView android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Payments"
+                        android:textSize="17sp"
+                        fontPath="fonts/roboto_medium.ttf"/>
+
+                    <TextView android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="There are no payments yet."
+                        android:layout_marginTop="3dp"
+                        android:textSize="15sp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider"
+                android:alpha="0.5"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="12dp"
+                android:paddingTop="9dp"
+                android:paddingRight="12dp"
+                android:paddingBottom="9dp"
+                android:orientation="horizontal">
+                <ImageView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/note_multiple_outline"
+                    android:tint="@color/pink_primary"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:orientation="vertical">
+
+                    <TextView android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Notes"
+                        android:textSize="17sp"
+                        fontPath="fonts/roboto_medium.ttf"/>
+
+                    <TextView android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="There are no notes yet."
+                        android:layout_marginTop="3dp"
+                        android:textSize="15sp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider"
+                android:alpha="0.5"/>
+            
+            <View android:layout_width="match_parent"
+                android:layout_height="96dp"/>
+        </LinearLayout> 
+    </android.support.v4.widget.NestedScrollView>
+        -->
+</LinearLayout>
+    
+

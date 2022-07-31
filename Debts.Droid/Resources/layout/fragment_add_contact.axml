@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#C8000000"
+    android:clickable="true"
+    android:fitsSystemWindows="false"
+    android:windowTranslucentStatus="true"
+    android:windowDrawsSystemBarBackgrounds="true"
+    android:windowTranslucentNavigation="true"
+    android:id="@+id/LayoutRoot">
+    <LinearLayout
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_width="0px"
+        android:layout_height="0px"/>
+    
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="48dp"
+        android:layout_marginBottom="72dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardUseCompatPadding="true"
+        app:cardCornerRadius="12dp">
+        <FrameLayout android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:background="@android:color/white"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+                    <ImageView
+                        android:id="@+id/image_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="36dp"
+                        android:layout_marginLeft="36dp"
+                        android:layout_marginRight="36dp"
+                        app:srcCompat="@drawable/add_operation_02" />
+
+                    <TextView
+                        android:id="@+id/title_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center"
+                        android:textSize="24dp"
+                        app:MvxLang="Text Title"/>
+
+                    <TextView
+                        android:id="@+id/text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginRight="24dp"
+                        android:layout_marginTop="12dp"
+                        android:textSize="16sp"
+                        app:MvxLang="Text Content"
+                        android:gravity="center" />
+ 
+                        <LinearLayout
+                            android:layout_gravity="center"
+                            android:id="@+id/container_of_list_item"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginRight="12dp"
+                            android:elevation="2dp"
+                            android:translationZ="1dp"
+                            android:padding="12dp" 
+                            android:layout_marginTop="12dp"
+                            android:orientation="horizontal"
+                            android:clickable="true">
+
+                            <com.debts.AvatarView
+                                android:layout_width="62dp"
+                                android:layout_height="62dp"
+                                android:layout_marginLeft="6dp"
+                                android:id="@+id/avatarView"
+                                android:layout_gravity="center"
+                                android:background="@drawable/bubble_avatar"
+                                app:MvxBind="Initials ContactName, Converter=NameTextToInitials; ImagePath PhotoPath; Click PickPhoto" />
+
+                            <LinearLayout android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/editTextFlowBackground"
+                                android:elevation="2dp"
+                                android:translationZ="1dp"
+                                android:orientation="vertical"
+                                android:layout_marginLeft="24dp" 
+                                android:layout_gravity="center">
+
+                                <EditText android:layout_width="match_parent"
+                                    android:layout_height="48dp"
+                                    android:id="@+id/contact_name_edit_text"
+                                    android:paddingLeft="12dp"
+                                    android:textSize="17sp"
+                                    android:layout_gravity="center_vertical"
+                                    android:gravity="center_vertical|left"
+                                    android:background="@null" 
+                                    android:lines="1"
+                                    android:maxLines="1"
+                                    android:singleLine="true"
+                                    android:imeOptions="actionDone"
+                                    app:MvxLang="Hint NameHint"
+                                    app:MvxBind="Text ContactName"/>
+                                
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:background="@android:color/white"/>
+
+                                <EditText android:layout_width="match_parent"
+                                    android:layout_height="48dp"
+                                    android:id="@+id/phone_number_edit_text"
+                                    android:paddingLeft="12dp"
+                                    android:textSize="17sp"
+                                    android:layout_gravity="center_vertical"
+                                    android:gravity="center_vertical|left"
+                                    android:background="@null"
+                                    android:inputType="phone" 
+                                    android:digits="0123456789+" 
+                                    android:imeOptions="actionDone"
+                                    app:MvxLang="Hint PhoneNumberHint"
+                                    app:MvxBind="Text PhoneNumber"/>
+                            </LinearLayout>
+                        </LinearLayout> 
+
+                </LinearLayout>
+                <Button
+                    android:id="@+id/add_button"
+                    android:layout_alignParentBottom="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:layout_marginLeft="100dp"
+                    android:layout_marginRight="100dp"
+                    android:theme="@style/ButtonTheme"
+                    android:background="@drawable/button_primary"
+                    app:MvxLang="Text AddContactHint"
+                    android:stateListAnimator="@null"
+                    app:MvxBind="Click AddContact"
+                    /> 
+            </LinearLayout>
+            
+            <ImageView android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                app:srcCompat="@drawable/close"
+                android:layout_margin="9dp"
+                android:layout_gravity="top|right"
+                android:layout_marginRight="12dp"
+                app:MvxBind="Click Close"/>
+        </FrameLayout>
+        
+    </android.support.v7.widget.CardView>
+        
+</android.support.design.widget.CoordinatorLayout>

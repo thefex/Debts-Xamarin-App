@@ -1,0 +1,49 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout" 
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:background="@color/gray_background"
+    android:orientation="vertical">  
+    
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        app:MvxBind="Visibility IsLoadingMoreDataEnabled, Converter=BooleanToVisibility">
+
+        <Button
+            android:id="@+id/load_more_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:layout_gravity="center"
+            android:theme="@style/ButtonTheme"
+            android:background="@drawable/button_primary"
+            android:text="LOAD MORE" 
+            android:stateListAnimator="@null"
+            app:MvxBind="Click LoadMore; ViewVisibility IsLoadingMoreData, Converter=BooleanToVisibility"
+            />
+        <ProgressBar
+            android:alpha="1"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            android:indeterminateTintMode="src_in" 
+            android:indeterminateTint="@color/accent"
+            android:tag="@string/progressViewTag"
+            android:visibility="gone"
+            app:MvxBind="ViewVisibility IsLoadingMoreData, Converter=NegatedBooleanToVisibility"/>
+    </FrameLayout>
+    
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="96dp"/>
+    
+</LinearLayout>

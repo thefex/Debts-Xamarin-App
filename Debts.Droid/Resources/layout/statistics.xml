@@ -1,0 +1,24 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="6dp"
+    android:paddingBottom="6dp"
+    android:id="@+id/root_view"
+    android:background="@color/gray_background"
+    android:orientation="vertical"> 
+    <mvvmcross.advancedrecyclerview.MvxAdvancedExpandableRecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:MvxHeaderLayoutId="@layout/statistics_header"
+        app:MvxFooterLayoutId="@layout/statistics_footer"
+        app:MvxGroupedDataConverter="@string/statistics_grouped_data_converter"
+        app:MvxGroupExpandController="@string/AccordionMvxGroupExpandController"
+        app:MvxTemplateSelector="@string/statistics_template_selector"
+        app:MvxBind="ItemsSource Sections; ChildItemClick ChildItemTapped" />
+</LinearLayout>
+    
+

@@ -1,0 +1,128 @@
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" 
+    android:id="@+id/root_view">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/root_view_layout"
+        android:layout_marginTop="9dp"
+        android:layout_marginBottom="9dp">
+
+    </FrameLayout>
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/underSwipe"
+        android:background="@android:color/transparent"
+        android:paddingTop="9dp"
+        android:paddingBottom="9dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+        <LinearLayout android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/check_image_view"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/check"/>
+
+            <TextView android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:textColor="@android:color/white"
+                android:textSize="17sp"
+                android:text="Mark as paid"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_alignParentRight="true"
+            android:id="@+id/delete_image_view"
+            android:layout_centerVertical="true">
+
+            <TextView android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginRight="16dp"
+                android:textColor="@android:color/white"
+                android:gravity="center_vertical"
+                android:layout_gravity="center_vertical"
+                android:textSize="17sp"
+                android:text="Delete"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:src="@drawable/delete"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+    
+    
+    <LinearLayout
+        android:id="@+id/container_of_list_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_item_list_tapped"
+        android:paddingTop="9dp"
+        android:paddingBottom="9dp"
+        android:orientation="horizontal">
+
+        <com.debts.AvatarView
+            android:layout_width="62dp"
+            android:layout_height="62dp"
+            android:layout_gravity="top"
+            android:layout_marginLeft="12dp"
+            android:id="@+id/avatarView"
+            android:background="@drawable/bubble_avatar"
+            app:MvxBind="Initials RelatedTo, Converter=NameToInitials; ImagePath RelatedTo.AvatarUrl" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginRight="9dp"
+            android:layout_marginLeft="9dp">
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/text_title"
+                android:textColor="@color/black_text_color"
+                app:MvxBind="Text Title"
+                android:textSize="15sp"/>
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:background="@drawable/round_text_info"
+                android:layout_marginTop="4dp"
+                app:MvxBind="Text PaymentDetails, Converter=PaymentDetailsToText; BackgroundDrawableId PaymentDetails, Converter=PaymentDetailsToBackgroundDrawableId"
+                android:textSize="11sp"/>
+        </LinearLayout>
+
+        <TextView android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:padding="12dp"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:textColor="@android:color/white"
+            android:layout_gravity="center"
+            android:background="@drawable/bubble_debt"
+            android:layout_marginRight="12dp"
+            android:id="@+id/amount_text_view"
+            app:MvxBind="Text PaymentDetails.Amount, Converter=Amount"/>
+    </LinearLayout>
+</FrameLayout>
+    
+

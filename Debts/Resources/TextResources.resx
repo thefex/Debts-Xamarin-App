@@ -1,0 +1,1049 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+            
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="Tutorial_Debts_Title">
+        <value>Debts</value>
+    </data>
+    <data name="Tutorial_Debts_Description" xml:space="preserve">
+        <value>Have you ever had issues with recovering your debts?
+Did you ever forget to pay off your debts?
+            
+Don't rely on your overwhelmed memory - let Debts take care of your finances!</value>
+    </data>
+    <data name="Tutorial_Budget_Title">
+        <value>Budget Tracking</value>
+    </data>
+    <data name="Tutorial_Budget_Description">
+        <value>Do you spend too much money on things you really do not need?
+            
+Start tracking your budget income and expenses with Debts!</value>
+    </data>
+    <data name="Tutorial_PhoneContacts_Title">
+        <value>Contacts Oriented</value>
+    </data>
+    <data name="Tutorial_PhoneContacts_Description">
+        <value>Using Debts you can assign debt/loan to your contact - by picking phone number from contact list.
+            
+If your debtor install the Debts app through shared link - he will have instant access to detailed debt information.
+        </value>
+    </data>
+    <data name="Tutorial_GpsTracking_Title">
+        <value>GPS Tracking</value>
+    </data>
+    <data name="Tutorial_GpsTracking_Description">
+        <value>Can't recall where does it debt come from?
+            
+Have you borrowed some money from your friend and can't recall where and how?
+            
+No worries - we automatically fill place on map where you had added your finance operation!
+    </value>
+    </data>
+    <data name="Tutorial_NotifyDebtors_Title">
+        <value>Pay off time!</value>
+    </data>
+    <data name="Tutorial_NotifyDebtors_Description">
+        <value>Your debtors don't take you seriously?
+            
+Inside the Debts you can send with an ease reminder through SMS or your messenger platform of choice!
+            
+Message will contain link which will lead your debtors to Debts app with further operation details.
+        </value>
+    </data>
+    <data name="Tutorial_More_Title">
+        <value>That is not all!</value>
+    </data>
+    <data name="Tutorial_More_Description" xml:space="preserve">
+        <value>Debts offer bunch of optional features that will help to organise your finances.
+            
+Notifications - get notifications about your debts/loans.
+            
+Rich search and filtering - filter or search your debts by date, name, contact and more!
+            
+Check it right now!
+        </value>
+    </data>
+    
+    <data name="Command_CallContact_PermissionRequired">
+        <value>We need phone related permissions to perform a call for you.</value>
+    </data>
+    
+    <data name="Command_DeleteContact_QuestionDialog_Title">
+        <value>Delete contact</value>
+    </data>
+    
+    <data name="Command_DeleteContact_QuestionDialog_Content">
+        <value>Do you really want to delete this contact and all related finance operations? Please take a note that this operation cannot be undone.</value>
+    </data>
+    
+    <data name="Command_AddNoteEmptyText_ToastErrorContent">
+        <value>Note text field is required!</value>
+    </data>
+    
+    <data name="Command_AddContact_ToastErrorContent">
+        <value>Contact name field is required!</value>
+    </data>
+    
+    <data name="Command_TransferToImportContact_ToastPermission_Content">
+        <value>We need your permission to import contacts.</value>
+    </data>
+
+    <data name="Command_TransferToImportContact_ToastPermission_ActionText">
+        <value>GRANT</value>
+    </data>
+    
+    <data name="Command_DeleteFinanceOperation_QuestionDialog_Title">
+        <value>Delete operation</value>
+    </data>
+
+
+    <data name="Command_DeleteBudgetOperation_QuestionDialog_Title">
+        <value>Delete budget item</value>
+    </data>
+ 
+    <data name="Command_DeleteFinanceOperation_QuestionDialog_Content">
+        <value>Do you really want to delete this operation? Please take a note that this operation cannot be undone.</value>
+    </data>
+
+    <data name="Command_DeleteBudget_QuestionDialog_Content">
+        <value>Do you really want to delete this item? Please take a note that this operation cannot be undone.</value>
+    </data>
+    
+    <data name="Command_FinalizeFinanceOperation_QuestionDialog_Title">
+        <value>Operation completed</value>
+    </data>
+
+    <data name="Command_FinalizeFinanceOperation_QuestionDialog_Content">
+        <value>Do you want to mark this finance operation as paid off?</value>
+    </data>
+    
+    <data name="Command_AddNewFinanceOperation_QuestionDialog_Title">
+        <value>Location Request</value>
+    </data>
+
+    <data name="Command_AddNewFinanceOperation_QuestionDialog_Content">
+        <value>We would like to present you where your finance operations were created. Therefore, would you like to grant us location permission?</value>
+    </data>
+    
+    <data name="Command_ListDeleteFinanceOperation_ToastContent">
+        <value>Finance operation has been deleted.</value>
+    </data>
+    
+    <data name="Command_ListDeleteBudget_ToastContent">
+        <value>Recorded budget item has been deleted.</value>
+    </data>
+    
+    <data name="Command_ListFinalizeFinanceOperation_ToastContent">
+        <value>Successfully marked finance operation as paid.</value>
+    </data>
+    
+    <data name="Toast_ActionText_Undo">
+        <value>UNDO</value>
+    </data>
+    
+    <data name="Converters_AppDomain_FinancesViewModelToDateRangeValueConverter_ForDatePeriod">
+        <value>For date: $DATE$</value>
+    </data>
+    
+    <data name="Converters_FinanceOperationPaymentDateTextValueConverter_PaymentHasNotBeenMadeText">
+        <value>Payment has not been made yet!</value>
+    </data>
+    
+    <data name="Converters_PickedContactToTextValueConverter_TapToPickContactText">
+        <value>Tap to select contact!</value>
+    </data>
+
+    <data name="Converters_PickedBudgetCategoryToTextValueConverter_TapToPickBudgetCategoryText">
+        <value>Tap to select category!</value>
+    </data>
+
+    <data name="ViewModel_AddFinanceOperationViewModel_OperationTitleMissing">
+        <value>You have to enter operation title.</value>
+    </data>
+
+    <data name="ViewModel_AddFinanceOperationViewModel_ContactMissing">
+        <value>You have to pick contact.</value>
+    </data>
+
+    <data name="ViewModel_AddBudgetViewModel_CategoryMissing">
+        <value>You have to select category.</value>
+    </data>
+
+
+    <data name="ViewModel_AddFinanceOperationViewModel_OperationAmountMissing">
+        <value>You have to enter operation amount.</value>
+    </data>
+
+    <data name="ViewModel_AddFinanceOperationViewModel_PaymentDateMissing">
+        <value>You have to select payment date.</value>
+    </data>
+
+    <data name="ViewModel_AddFinanceOperationViewModel_EnterOperationTitle">
+        <value>Please enter operation title.</value>
+    </data>
+
+    <data name="ViewModel_AddFinanceOperationViewModel_EnterContact">
+        <value>Please pick contact.</value>
+    </data>
+
+    <data name="ViewModel_AddFinanceOperationViewModel_EnterOperationAmount">
+        <value>Please enter operation amount.</value>
+    </data>
+
+    <data name="ViewModel_AddFinanceOperationViewModel_EnterPaymentDate">
+        <value>Please pick payment deadline date.</value>
+    </data>
+    
+    <data name="ViewModel_AddFinanceOperatioNViewModel_EnterTitleHint">
+        <value>Enter title</value>
+    </data>
+    
+    <data name="ViewModel_FinancesDetailsViewModel_Notes">
+        <value>Notes</value>
+    </data>
+    
+    <data name="ViewModel_FinanceDetailsViewModel_NoNotes">
+        <value>You do not have any notes 😢</value>
+    </data>
+
+    <data name="ViewModel_FinancesDetailsViewModel_Note_CallDone">
+        <value>You have called contact related to this finance operation.</value>
+    </data>
+    
+    <data name="ViewModel_FinanceDetailsViewModel_Note_AskIfShared">
+        <value>Have you just shared the finance operation?</value>
+    </data>
+    
+    <data name="ViewModel_FinanceDetailsViewModel_Note_AskIfSms">
+        <value>Have you just sent SMS related to this finance operation?</value>
+    </data>
+    
+    <data name="ViewModel_FinanceDetailsViewModel_Note_YouHaveShared">
+        <value>You have shared this operation.</value>
+    </data>
+    
+    <data name="ViewModel_FinanceDetailsViewModel_Note_YouHaveSentSms">
+        <value>You have sent SMS to the contact related with this finance operation.</value>
+    </data>
+    
+    <data name="ViewModel_ContactListViewModel_Dialog_ImportContacts_Title">
+        <value>Import Contacts</value>
+    </data>
+
+    <data name="ViewModel_ContactListViewModel_Dialog_ImportContacts_Content">
+        <value>You do not have any contacts yet - would you like to import your phone contacts?</value>
+    </data>
+    
+    <data name="Transactions">
+        <value>Financial Transactions</value>
+    </data>
+    
+    <data name="ActiveDebts">
+        <value>Active Debts</value>
+    </data>
+    
+    <data name="ActiveLoans">
+        <value>Active Loans</value>
+    </data>
+    
+    <data name="PastTransactions">
+        <value>Past Transactions</value>
+    </data>
+    
+    <data name="MultipleCurrencies">
+        <value>multiple currencies</value>
+    </data>
+    
+    <data name="Button_Yes">
+        <value>yes</value>
+    </data>
+    
+    <data name="Button_No">
+        <value>no</value>
+    </data>
+    
+    
+    <data name="Dialog_Error_Title">
+        <value>Error</value>
+    </data>
+
+    <data name="Dialog_Error_DateFilterFinances_Content">
+        <value>You have to select both start and end date to filter operations.</value>
+    </data>
+
+    <data name="Dialog_Error_EndDateFilterFinances_Content">
+        <value>End date has to be later than start date.</value>
+    </data>
+    
+    <data name="Dialog_Error_DateFilterStatistics_Content">
+        <value>You have to select both start and end date to filter statistics.</value>
+    </data>
+
+    <data name="Dialog_Error_EndDateFilterStatistics_Content">
+        <value>End date has to be later than start date.</value>
+    </data>
+    
+    <data name="Dialog_Error_AtLeastOnFilter_Content">
+        <value>You have to select at least one filter.</value>
+    </data>
+
+    <data name="Dialog_Error_FilterCategory_Content">
+        <value>You have to select filter category.</value>
+    </data>
+    
+    <data name="WalkthroughService_Statistics_FilterByDate_Title">
+        <value>Filter by date</value>
+    </data>
+    
+    <data name="WalkthroughService_Statistics_FilterByDate_Content">
+        <value>Looking for a statistics for requested date range?&#13;No worries - you can filter it here quickly!</value>
+    </data>
+
+    <data name="WalkthroughService_Budget_AddOperation_Title">
+        <value>Track Budget</value>
+    </data>
+
+    <data name="WalkthroughService_Budget_AddOperation_Content">
+        <value>Tap to create a new budget item (income/expense) when you are ready!</value>
+    </data>
+
+    <data name="WalkthroughService_Budget_FilterByDate_Title">
+        <value>Filter by date</value>
+    </data>
+
+    <data name="WalkthroughService_Budget_FilterByCategory_Title">
+        <value>Filter by category</value>
+    </data>
+
+    <data name="WalkthroughService_Budget_FilterByDate_Content">
+        <value>Looking for a budget for requested date range?&#13;No worries - you can filter your list here quickly!</value>
+    </data>
+
+    <data name="WalkthroughService_Budget_FilterByCategory_Content">
+        <value>Looking for a budget for requested category?&#13;No worries - you can filter your list by category here quickly!</value>
+    </data>
+    
+    <data name="WalkthroughService_Main_AddOperation_Title">
+        <value>Add Operation</value>
+    </data>
+    
+    <data name="WalkthroughService_Main_AddOperation_Content">
+        <value>Tap to create a new finance operation when you are ready!</value>
+    </data>
+    
+    <data name="WalkthroughService_Main_Menu_Title">
+        <value>Menu</value>
+    </data>
+    
+    <data name="WalkthroughService_Main_Menu_Content">
+        <value>Quick access to filtered lists of finances, contacts, overall statistics and settings of notifications.</value>
+    </data>
+    
+    <data name="WalkthroughService_Main_FilterByDate_Title">
+        <value>Filter by date</value>
+    </data>
+    
+    <data name="WalkthroughService_Main_FilterByDate_Content">
+        <value>Looking for a finances for requested date range?&#13;No worries - you can filter your list here quickly!</value>
+    </data>
+    
+    <data name="WalkthroughService_Main_FilterByStatus_Title">
+        <value>Filter by status</value>
+    </data>
+    
+    <data name="WalkthroughService_Main_FilterByStatus_Content">
+        <value>Are you only looking for finances that have been paid?&#13;You can easily filter your list by finance status here!</value>
+    </data>
+    
+    <data name="WalkthroughService_ImportContacts_LookingForContact_Title">
+        <value>Looking for contact?</value>
+    </data>
+    
+    <data name="WalkthroughService_ImportContacts_LookingForContact_Content">
+        <value>Type part of your contact name or phone number and we will find it for you!</value>
+    </data>
+
+    <data name="WalkthroughService_ImportContacts_Utilities_Title">
+        <value>Utilities menu</value>
+    </data>
+
+    <data name="WalkthroughService_ImportContacts_Utilities_Content">
+        <value>Tap here if you want to select all or reset selection.</value>
+    </data>
+    
+    <data name="WalkthroughService_FinanceDetails_FinalizeOperation_Title">
+        <value>Finalize Operation</value>
+    </data>
+    
+    <data name="WalkthroughService_FinanceDetails_FinalizeOperation_Content">
+        <value>Tap when you are ready to mark operation as paid-off.</value>
+    </data>
+    
+    <data name="WalkthroughService_FinanceDetails_AddNote_Title">
+        <value>Add Note</value>
+    </data>
+    
+    <data name="WalkthrougService_FinanceDetails_AddNote_Content">
+        <value>You can add note so you will not forget any details related to the finance operation.</value>
+    </data>
+    
+    <data name="WalkthroughService_FinanceDetails_PhoneCall_Title">
+        <value>Phone Call</value>
+    </data>
+    
+    <data name="WalkthroughService_FinanceDetails_PhoneCall_Content">
+        <value>Would you lke to remind your debtor that it is a pay-off time??&#13;Just call right now!</value>
+    </data>
+    
+    <data name="WalkthroughService_FinanceDetails_SMS_Title">
+        <value>Send SMS Reminder</value>
+    </data>
+
+    <data name="WalkthroughService_FinanceDetails_SMS_Content">
+        <value>Operation is still not paid off? Remind your contact by sending SMS!</value>
+    </data>
+    
+    <data name="WalkthroughService_FinanceDetails_Share_Title">
+        <value>Share Operation</value>
+    </data>
+    
+    <data name="WalkthroughService_FinanceDetails_Share_Content">
+        <value>You can share finance operation details via social media application of your choice.</value>
+    </data>
+    
+    <data name="WalkthroughService_FinanceDetails_FavoriteOperation_Title">
+        <value>Favorite Operation</value>
+    </data>
+    
+    <data name="WalkthroughService_FinanceDetails_FavoriteOperation_Content">
+        <value>Tap to make it a favorite operation - and get quick access via Favorites section in menu!</value>
+    </data>
+    
+    <data name="WalkthroughService_ContactList_AddContact_Title">
+        <value>Add Contact</value>
+    </data>
+    
+    <data name="WalkthroughService_ContactList_AddContact_Content">
+        <value>When you are in contacts screen use this button to create new contact!</value>
+    </data>
+    
+    <data name="WalkthroughService_ContactList_ImportContact_Title">
+        <value>Import contacts</value>
+    </data>
+    
+    <data name="WalkthroughService_ContactList_ImportContact_Content">
+        <value>Tap here to import contacts from your phone.</value>
+    </data>
+    
+    <data name="Notifications_UpcomingDebt">
+        <value>Upcoming Debt</value>
+    </data>
+    
+    <data name="Notifications_UpcomingLoan">
+        <value>Upcoming Loan</value>
+    </data>
+    
+    <data name="Notifications_UnpaidDebt">
+        <value>Unpaid Debt</value>
+    </data>
+    
+    <data name="Notifications_UnpaidLoan">
+        <value>Unpaid Loan</value>
+    </data>
+    
+    <data name="Notifications_Template_UpcomingDebt">
+        <value>You should pay-off $AMOUNT$ ($CURRENCY$) debt for $CONTACT_NAME$ $DATE_OPERATION$.</value>
+    </data>
+    
+    <data name="Notifications_Template_UpcomingLoan">
+        <value>$CONTACT_NAME$ should pay-off his loan of $AMOUNT$ ($CURRENCY) $DATE_OPERATION$.</value>
+    </data>
+    
+    <data name="Notifications_Template_UnpaidDebt">
+        <value>$DATE_OPERATION$ debt deadline of $AMOUNT$ ($CURRENCY$) for $CONTACT_NAME$ has been exceed!</value>
+    </data>
+    
+    <data name="Notifications_Template_UnpaidLoan">
+        <value>$CONTACT_NAME$ has exceed loan deadline of $AMOUNT$ ($CURRENCY$) $DATE_OPERATION$!</value>
+    </data>
+    
+    <data name="ContactList_Title">
+        <value>Contacts</value>
+    </data>
+    
+    <data name="PickBudgetCategory_Title">
+        <value>Pick Category</value>
+    </data>
+    
+    <data name="PickContact_Title">
+        <value>Pick Contact</value>
+    </data>
+    
+    <data name="AddFinanceOperation_Title">
+        <value>ADD OPERATION</value>
+    </data>
+
+    <data name="AddBudget_Title">
+        <value>ADD</value>
+    </data>
+    
+    <data name="AddFinanceOperation_NEXT">
+        <value>NEXT</value>
+    </data>
+    
+    <data name="AddBudget_NEXT">
+        <value>NEXT</value>
+    </data>
+    
+    <data name="AddFinanceOperation_Page_1_Title">
+        <value>Add Finance Operation</value>
+    </data>
+
+    <data name="AddBudget_Page_1_Title">
+        <value>Track Your Budget</value>
+    </data>
+
+    <data name="AddFinanceOperation_Page_1_Content">
+        <value>Type your new operation title and select it's type so you can find it quickly in future!</value>
+    </data>
+
+    <data name="AddBudget_Page_1_Content">
+        <value>Type your new expense/income title and select it's type so you can find it quickly in future!</value>
+    </data>
+    
+    <data name="AddFinanceOperation_Page_2_Title">
+        <value>Assign Contact</value>
+    </data>
+
+    <data name="AddBudget_Page_2_Title">
+        <value>Assign Category</value>
+    </data>
+
+    <data name="AddFinanceOperation_Page_2_Content">
+        <value>Assign contact to your new finance operation so you don't forget who you should call later on!</value>
+    </data>
+    
+    <data name="AddBudget_Page_2_Content">
+        <value>Assign category to your new income/expense operation so we can display you more accurate statistics and filter options!</value>
+    </data>
+    
+    <data name="AddFinanceOperation_Page_3_Title">
+        <value>Enter Amount and Currency</value>
+    </data>
+
+    <data name="AddBudget_Page_3_Title">
+        <value>Enter Amount and Currency</value>
+    </data>
+    
+    <data name="AddFinanceOperation_Page_3_Content">
+        <value>Don't forget how much money have been borrowed!</value>
+    </data>
+
+    <data name="AddBudget_Page_3_Content">
+        <value>Don't forget how much money you have received or spent!</value>
+    </data>
+    
+    <data name="AddFinanceOperation_Page_4_Title">
+        <value>Select Payment Deadline</value>
+    </data>
+    
+    <data name="AddFinanceOperation_Page_4_Content">
+        <value>Pick payment deadline so we will know when we should start bothering you with notifications!</value>
+    </data>
+
+    <data name="BudgetList_EmptyListText">
+        <value>Start tracking your budget by adding your income/expense.</value>
+    </data>
+    
+    <data name="IncomeBudgetList_EmptyListText">
+        <value>Start tracking your income - tap plus button to add income item.</value>
+    </data>
+
+    <data name="ExpenseBudgetList_EmptyListText">
+        <value>Start tracking your expenses - tap plus button to add expense item.</value>
+    </data>
+    
+    <data name="BudgetList_Title">
+        <value>Budget</value>
+    </data>
+    
+    <data name="BudgetIncome_Title">
+        <value>Income</value>
+    </data>
+    
+    <data name="BudgetExpense_Title">
+        <value>Expenses</value>
+    </data>
+    
+    <data name="AllFinancesList_Title">
+        <value>All</value>
+    </data>
+    
+    <data name="AllFinancesList_EmptyListText">
+        <value>You do not have any finance operations.</value>
+    </data>
+    
+    <data name="FavoriteFinanceList_Title">
+        <value>Favorites</value>
+    </data>
+    
+    <data name="FavoriteFinanceList_EmptyListText">
+        <value>You did not check any finance operation as favorite.</value>
+    </data>
+    
+    <data name="MyDebts_EmptyListText">
+        <value>You do not have any debt.</value>
+    </data>
+    
+    <data name="MyLoans_EmptyListText">
+        <value>You do not have any loan.</value>
+    </data>
+    
+    <data name="ImportContactsViewModel.FetchingContactsText">
+        <value>Fetching your contacts...</value>
+    </data>
+        
+    <data name="ImportContactsViewModel.EmptyListText">
+        <value>You do not have any contacts on your phone 😢</value>
+    </data>
+    
+    <data name="StartViewModel.Start">
+        <value>GET STARTED</value>
+    </data>
+    
+    <data name="ContactDetailsViewModel.StatsDebts">
+        <value>Statistics (debts)</value>
+    </data>
+
+    <data name="ContactDetailsViewModel.AmountOfDebts">
+        <value>Amount of debts</value>
+    </data>
+    
+    <data name="ContactDetailsViewModel.RemainingDebts">
+        <value>Remaining amount of debt money</value>
+    </data>
+    
+    <data name="ContactDetailsViewModel.TotalAmountDebts">
+        <value>Total amount of debt money</value>
+    </data>
+    
+    <data name="ContactDetailsViewModel.CollectedDebts">
+        <value>Collected amount of debt money</value>
+    </data>
+    
+    <data name="ContactDetailsViewModel.StatsLoans">
+        <value>Statistics (loans)</value>
+    </data>
+    
+    <data name="ContactDetailsViewModel.AmountOfLoans">
+        <value>Amount of loans</value>
+    </data>
+    
+    <data name="ContactDetailsViewModel.TotalAmountOfLoans">
+        <value>Total amount of loan money</value>
+    </data>
+    
+    <data name="ContactDetailsViewModel.RemainingAmountLoan">
+        <value>Remaining amount of loan money</value>
+    </data>
+
+    <data name="ContactDetailsViewModel.PaidAmountLoan">
+        <value>Paid amount of loan money</value>
+    </data>
+
+    <data name="ContactDetailsViewModel.General">
+        <value>General</value>
+    </data>
+    
+    <data name="ContactDetailsViewModel.PhoneNumber">
+        <value>Phone Number</value>
+    </data>
+    
+    <data name="ContactListViewModel.EmptyListText">
+        <value>You do not have any contacts yet 😢</value>
+    </data>
+
+    <data name="ContactListViewModel.ImportContacts">
+        <value>IMPORT CONTACTS</value>
+    </data>
+    
+    <data name="ContactListViewModel.LoadMore">
+        <value>LOAD MORE</value>
+    </data>
+
+    <data name="FinanceDetailsViewModel.General">
+        <value>General</value>
+    </data>
+
+    <data name="BudgetDetailsViewModel.General">
+        <value>General</value>
+    </data>
+    
+    <data name="FinanceDetailsViewModel.Title">
+        <value>Title</value>
+    </data>
+    
+    <data name="BudgetDetailsViewModel.Title">
+        <value>Title</value>
+    </data>
+
+    <data name="FinanceDetailsViewModel.Price">
+        <value>Price</value>
+    </data>
+
+    <data name="BudgetDetailsViewModel.Price">
+        <value>Price</value>
+    </data>
+    
+    <data name="FinanceDetailsViewModel.Details">
+        <value>Details</value>
+    </data>
+    
+    <data name="FinanceDetailsViewModel.OperationType">
+        <value>Operation Type</value>
+    </data>
+
+    <data name="BudgetDetailsViewModel.OperationType">
+        <value>Operation Type</value>
+    </data>
+    
+    <data name="FinanceDetailsViewModel.CreatedDate">
+        <value>Created Date</value>
+    </data>
+
+    <data name="BudgetDetailsViewModel.CreatedDate">
+        <value>Created Date</value>
+    </data>
+ 
+    <data name="FinanceDetailsViewModel.PaymentDeadline">
+        <value>Payment Deadline</value>
+    </data>
+    
+    <data name="FinanceDetailsViewModel.CreatedAtLocation">
+        <value>Created at location</value>
+    </data>
+
+    <data name="FinanceDetailsViewModel.TapToSeeOnMap">
+        <value>Tap to see location on map</value>
+    </data>
+    
+    <data name="FinanceDetailsViewModel.PaymentDate">
+        <value>Payment Date</value>
+    </data>
+    
+    <data name="BaseFinancesViewModel.LoadMore">
+        <value>LOAD MORE</value>
+    </data>
+    
+    <data name="AddFinanceOperationViewModel.EnterAmountHint">
+        <value>Tap to enter money amount</value>
+    </data>
+    
+    <data name="AddFinanceOperationViewModel.EnterDeadlineHint">
+        <value>Tap to select payment deadline</value>
+    </data>
+    
+    <data name="AddContactViewModel.Title">
+        <value>Add Contact</value>
+    </data>
+    
+    <data name="AddContactViewModel.Content">
+        <value>Create your new contact by filling following fields!</value>
+    </data>
+    
+    <data name="AddContactViewModel.NameHint">
+        <value>Enter contact name</value>
+    </data>
+    
+    <data name="AddContactViewModel.PhoneNumberHint">
+        <value>Enter phone number</value>
+    </data>
+    
+    <data name="AddContactViewModel.AddContactHint">
+        <value>ADD CONTACT</value>
+    </data>
+
+    <data name="AddBudgetViewModel.AddBudgetHint">
+        <value>ADD</value>
+    </data>
+
+    <data name="AddBudgetViewModel.Title">
+        <value>Track Budget</value>
+    </data>
+
+    <data name="AddBudgetViewModel.Content">
+        <value>Create new expense/income by filling following fields!</value>
+    </data>
+    
+    <data name="AddBudgetViewModel.TitleHint">
+        <value>Enter expense/income title</value>
+    </data>
+    
+    <data name="PickContactViewModel.EmptyListText">
+        <value>You do not have any contacts yet 😢</value>
+    </data>
+    
+    <data name="PickContactViewModel.ImportContacts">
+        <value>IMPORT CONTACTS</value>
+    </data>
+
+    <data name="StatisticsViewModel.BudgetText">
+        <value>Budget</value>
+    </data>
+    
+    <data name="StatisticsViewModel.DebtsText">
+        <value>Debts</value>
+    </data>
+  
+    <data name="StatisticsViewModel.AmountOfDebts">
+        <value>Amount of debts</value>
+    </data>
+
+    <data name="StatisticsViewModel.AmountOfBudget">
+        <value>Amount of tracked budget items</value>
+    </data>
+    
+    <data name="StatisticsViewModel.TotalAmountOfDebtsMoney">
+        <value>Total amount of debt money</value>
+    </data>
+    
+    <data name="StatisticsViewModel.TotalAmountOfBudget">
+        <value>Total amount of tracked budget</value>
+    </data>
+    
+    <data name="StatisticsViewModel.RemainingAmountOfDebtMoney">
+        <value>Remaining amount of debt money</value>
+    </data>
+
+    <data name="StatisticsViewModel.Expenses">
+        <value>Expenses amount</value>
+    </data>
+    
+    <data name="StatisticsViewModel.CollectedAmountOfDebtMoney">
+        <value>Collected amount of debt money</value>
+    </data>
+
+    <data name="StatisticsViewModel.Income">
+        <value>Income amount</value>
+    </data>
+    
+    <data name="StatisticsViewModel.LoanText">
+        <value>Loans</value>
+    </data>
+    
+    <data name="StatisticsViewModel.AmountOfLoans">
+        <value>Amount of loans</value>
+    </data>
+    
+    <data name="StatisticsViewModel.TotalAmountOfLoanMoney">
+        <value>Total amount of loan money</value>
+    </data>
+    
+    <data name="StatisticsViewModel.RemainingAmountOfLoanMoney">
+        <value>Remaining amount of loan money</value>
+    </data>
+    
+    <data name="StatisticsViewModel.PaidAmountOfLoanMoney">
+        <value>Paid amount of loan money</value>
+    </data>
+
+    <data name="StatisticsViewModel.StatisticsText">
+        <value>Statistics</value>
+    </data>
+
+    <data name="MainBottomMenuFragment_Menu_FinanceOperations">
+        <value>Finances</value>
+    </data>
+    
+    <data name="MainBottomMenuFragment_Menu_BudgetAll">
+        <value>Budget</value>
+    </data>
+
+    <data name="MainBottomMenuFragment_Menu_BudgetExpenses">
+        <value>Expenses</value>
+    </data>
+
+    <data name="MainBottomMenuFragment_Menu_BudgetIncome">
+        <value>Income</value>
+    </data>
+    
+    <data name="MainBottomMenuFragment_Menu_All">
+        <value>All (Debts and Loans)</value>
+    </data>
+    
+    <data name="MainBottomMenuFragment_Menu_Debts">
+        <value>Debts</value>
+    </data>
+    
+    <data name="MainBottomMenuFragment_Menu_Loans">
+        <value>Loans</value>
+    </data>
+
+    <data name="MainBottomMenuFragment_Menu_Favorites">
+        <value>Favorites</value>
+    </data>
+    
+    <data name="MainBottomMenuFragment_Menu_General">
+        <value>General</value>
+    </data>
+
+    <data name="MainBottomMenuFragment_Menu_Contacts">
+        <value>Contacts</value>
+    </data>
+
+    <data name="MainBottomMenuFragment_Menu_Statistics">
+        <value>Statistics</value>
+    </data>
+    
+    <data name="MainBottomMenuFragment_Menu_Settings">
+        <value>Settings</value>
+    </data>
+    
+    <data name="Budget_Category_Main_FoodAndDrinks">
+        <value>Food and drinks</value>
+    </data>
+    
+    <data name="Budget_Category_Main_Shopping">
+        <value>Shopping</value>
+    </data>
+    
+    <data name="Budget_Category_Main_House">
+        <value>House</value>
+    </data>
+    
+    <data name="Budget_Category_Main_Transport">
+        <value>Transport</value>
+    </data>
+    
+    <data name="Budget_Category_Main_Car">
+        <value>Car</value>
+    </data>
+    
+    <data name="Budget_Category_Main_Entertaiment">
+        <value>Life and entertainment</value>
+    </data>
+    
+    <data name="Budget_Category_Electronics">
+        <value>Electronics</value>
+    </data>
+    
+    <data name="Budget_Category_Bank">
+        <value>Banking related</value>
+    </data>
+    
+    <data name="Budget_Category_Investments">
+        <value>Investments</value>
+    </data>
+    
+    <data name="Budget_Category_Income">
+        <value>Income</value>
+    </data>
+    
+    <data name="Budget_Category_Other">
+        <value>Other</value>
+    </data>
+    
+    <data name="Budget_Category_HealthBeauty">
+        <value>Health &amp; Beauty</value>
+    </data>
+    
+    <data name="Budget_Category_AlcoholSmoke">
+        <value>Alcohol &amp; Tobacco</value>
+    </data>
+    
+    <data name="Budget_Category_Education">
+        <value>Education</value>
+    </data>
+    
+    <data name="Budget_Category_Hobby">
+        <value>Hobby</value>
+    </data>
+    
+    <data name="Budget_Category_Books">
+        <value>Books</value>
+    </data>
+    
+    <data name="Budget_Category_Sport">
+        <value>Sport</value>
+    </data>
+    
+    <data name="Budget_Category_PhoneInternet">
+        <value>Phone &amp; Internet</value>
+    </data>
+    
+    <data name="Budget_Category_Taxes">
+        <value>Taxes</value>
+    </data>
+    
+    <data name="CommonText_DONE">
+        <value>DONE</value>
+    </data>
+    
+    <data name="DateDialog_PaymentDeadline_Title">
+        <value>Payment Deadline Date</value>
+    </data>
+    
+    <data name="ContactDetailsViewModel.UserHasNoPhoneNumber">
+        <value>Contact has no phone number assigned.</value>
+    </data>
+    
+    <data name="EmptyFinanceSection_Text">
+        <value>There are no any finance operations.</value>
+    </data>
+    
+    <data name="AddFinanceOperationNote_Title">
+        <value>Add Note</value>    
+    </data>
+    
+    <data name="AddFinanceOperationNote_Body">
+        <value>Please enter the text note below.</value>
+    </data>
+    
+    <data name="AddFinanceOperationNote_EnterPlaceholder">
+        <value>note text</value>
+    </data>
+    
+    <data name="AddFinanceOperationNote_Cancel">
+        <value>cancel</value>
+    </data>
+    
+    <data name="AddFinanceOperationNote_Ok">
+        <value>ok</value>
+    </data>
+    
+    <data name="DeepLink_SocialTags_Title">
+        <value>Debts Finance Manager</value>
+    </data>
+    
+    <data name="DeepLink_SocialTags_Body">
+        <value>
+            {CONTACT_NAME} has shared a details of finance operation - {TITLE} ({TYPE}, {AMOUNT} with deadline date of {DEADLINE_DATE}). 
+            Tap here to open in Debts application.
+        </value>
+    </data>
+    
+    <data name="ErrorLayerResponse_BuildDeepLink_ErrorMessage">
+        <value>We were unable to complete sharing process. Please check your internet connection state and try again.</value>
+    </data>
+    
+    <data name="Premium_CantBuy">
+        <value>Unfortunately - your current device does not support in app purchases. Please check if you have parental control enabled.</value>
+    </data>
+    
+</root>

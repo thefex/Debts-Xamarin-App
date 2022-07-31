@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@android:color/white"
+    android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/image_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginRight="36dp"
+        app:srcCompat="@drawable/add_operation_02" />
+
+    <TextView
+        android:id="@+id/title_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:textSize="24dp"
+        android:text="Assign Category"/>
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginTop="12dp"
+        android:textSize="16sp"
+        android:text="Assign category to your new income/expense operation so we can display you more accurate statistics and filter options!"
+        android:gravity="center" />
+    
+    <FrameLayout android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_gravity="center"
+            android:id="@+id/container_of_list_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" 
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:elevation="2dp"
+            android:translationZ="1dp"
+            android:padding="12dp"
+            android:background="@drawable/editTextFlowBackground"
+            android:orientation="horizontal"
+            android:clickable="true"
+            app:MvxBind="Click PickCategory">
+
+            <ImageView
+                android:layout_width="62dp"
+                android:layout_height="62dp"
+                android:layout_gravity="top"
+                android:layout_marginLeft="12dp"
+                android:scaleType="center"
+                android:id="@+id/avatarView"
+                android:background="@drawable/bubble_avatar"
+                app:MvxBind="DrawableName SelectedCategory.AssetName; BackgroundBubble SelectedCategory.ColorHex"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginRight="9dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="12dp">
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/text_title"
+                    android:layout_gravity="center_vertical|left"
+                    app:MvxBind="Text SelectedCategory, Converter=PickedCategoryToText"
+                    android:textSize="17sp" />
+            </LinearLayout> 
+        </LinearLayout>
+    </FrameLayout>
+    
+</LinearLayout>

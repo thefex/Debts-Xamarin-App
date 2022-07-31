@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    android:clickable="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ImageView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/close"
+            android:layout_margin="12dp"
+            android:layout_gravity="top|right" 
+            app:MvxBind="Click Skip"/>
+        
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/first_animation"
+            android:layout_width="wrap_content"
+            android:layout_height="180dp"
+            android:layout_marginLeft="36dp"
+            android:layout_marginRight="36dp"
+            app:lottie_fileName="star_01.json"
+            android:scaleType="fitCenter"
+            app:lottie_loop="false"
+            app:lottie_autoPlay="false" />
+
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:textSize="24dp"
+            android:text="Rate Us!"/>
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginTop="12dp"
+            android:gravity="center" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/second_animation"
+            android:layout_width="wrap_content"
+            android:layout_height="72dp"
+            android:layout_marginLeft="36dp"
+            android:layout_marginRight="36dp"
+            app:lottie_fileName="star_02.json"
+            android:scaleType="fitCenter"
+            app:lottie_loop="false"
+            app:lottie_autoPlay="false" />
+
+        <Button
+            android:id="@+id/rateButton"
+            android:layout_alignParentBottom="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_gravity="center"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:theme="@style/ButtonTheme"
+            android:background="@drawable/button_primary"
+            android:text="RATE NOW!"
+            android:stateListAnimator="@null"
+            app:MvxBind="Click Rate" />
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:padding="9dp">
+        <CheckBox
+            android:id="@+id/checkbox"
+            style="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Do not show again"
+            android:textSize="14sp"
+            android:layout_gravity="center"
+            android:layout_marginRight="12dp"
+            app:MvxBind="Checked IsNeverShowAgainChecked; Visibility IsNeverAskAgainAvailable, Converter=BooleanToVisibility"/>
+        <Button
+            android:id="@+id/skipButton"
+            android:layout_alignParentBottom="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:layout_gravity="center"
+            android:paddingTop="2dp" 
+            android:paddingBottom="2dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp" 
+            android:text="SKIP"
+            android:textSize="14sp"
+            android:stateListAnimator="@null"
+            app:MvxBind="Click Skip" />
+    </LinearLayout>
+    
+</LinearLayout>
