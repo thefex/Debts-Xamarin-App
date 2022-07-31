@@ -22,7 +22,7 @@ For proper running of app you have to include:
 - Customize Share Deep Link Content - Services/AppGrowth/FireBaseShareLinkBuilderService on both platforms
 - Setup App on Google Play / App Store and create premium products (+ update names/ids @ AppStoreBillingService.cs class on iOS / GoogleBillingClient.cs class on Android)
 
-- Uncomment "UNCOMMENT THIS WHEN YOU PROVIDE CONSTANTS AS DESCRIBED IN README FILE!!" (MainApplication.cs + AppDelegate.cs) when you go through above steps
+- Find in project & Uncomment "UNCOMMENT THIS WHEN YOU PROVIDE CONSTANTS AS DESCRIBED IN README FILE!!" when you go through above steps
 
 The app will build&run (tested on Android API 30, iOS 15.0) regardless of above, but not all features will work as expected/correctly - deep links/share/go premium will be broken.
 
