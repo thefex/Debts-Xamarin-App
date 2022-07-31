@@ -31,8 +31,13 @@ The app will build&run (tested on Android API 30, iOS 15.0) regardless of above,
 See here: 
 https://github.com/thefex/Debts-Xamarin-App/blob/main/Content/ios_showcase_video.mov
 
+
 https://github.com/thefex/Debts-Xamarin-App/blob/main/Content/android_showcase_1.mov
+
+
 https://github.com/thefex/Debts-Xamarin-App/blob/main/Content/android_showcase_2.mov
+
+
 https://github.com/thefex/Debts-Xamarin-App/blob/main/Content/android_showcase_3__.mov
 
 
